@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Plano de Compra · Rock in Rio 2026 — Dia 6/09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0a0a12;
+    --bg2: #12121f;
+    --card: rgba(255, 255, 255, 0.04);
+    --card-border: rgba(255, 255, 255, 0.10);
+    --text: #f4f4f8;
+    --muted: #a0a0b8;
+    --pink: #ff2e63;
+    --orange: #ff8a00;
+    --purple: #8a4fff;
+    --cyan: #28e0c8;
+    --green: #2ecc71;
+    --red: #ff4d5e;
+    --grad: linear-gradient(110deg, var(--pink), var(--orange));
+    --grad2: linear-gradient(110deg, var(--purple), var(--cyan));
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: radial-gradient(1200px 600px at 80% -10%, rgba(138,79,255,0.18), transparent 60%),
+                radial-gradient(1000px 500px at -10% 10%, rgba(255,46,99,0.16), transparent 55%),
+                var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding-bottom: 60px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+  /* HERO */
+  header.hero {
+    text-align: center;
+    padding: 64px 20px 40px;
+    position: relative;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 13px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--orange);
+    border: 1px solid rgba(255,138,0,0.35);
+    padding: 6px 14px; border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  h1.title {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(40px, 9vw, 82px);
+    line-height: 0.95; letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--orange); /* fallback se background-clip não for suportado */
+    margin-bottom: 10px;
+  }
+  .subtitle { font-size: clamp(16px, 4vw, 22px); color: var(--text); font-weight: 600; }
+  .subtitle b { color: var(--cyan); }
+  .lineup-note { color: var(--muted); margin-top: 6px; font-size: 15px; }
+
+  /* COUNTDOWN */
+  .countdown {
+    margin: 34px auto 0; max-width: 560px;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 22px;
+    backdrop-filter: blur(8px);
+  }
+  .countdown .cd-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+  .cd-grid { display: flex; justify-content: center; gap: 14px; }
+  .cd-unit { min-width: 70px; }
+  .cd-num {
+    font-family: 'Anton', sans-serif; font-size: clamp(34px, 9vw, 48px);
+    color: var(--cyan); /* fallback */
+    line-height: 1;
+  }
+  .cd-unit span { display: block; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+  .cd-live { font-size: 22px; font-weight: 800; color: var(--green); }
+
+  /* Texto em gradiente — com fallback de cor sólida nas regras acima */
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    h1.title { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .cd-num { background: var(--grad2); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  }
+
+  /* SECTIONS */
+  section { margin-top: 46px; }
+  .sec-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+  .sec-num {
+    flex: none; width: 42px; height: 42px; border-radius: 12px;
+    display: grid; place-items: center; font-family: 'Anton', sans-serif; font-size: 22px;
+    background: var(--grad); color: #fff;
+  }
+  .sec-head h2 { font-size: clamp(22px, 5vw, 30px); font-weight: 800; letter-spacing: -0.3px; }
+
+  .card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 24px;
+    backdrop-filter: blur(6px);
+  }
+  .card + .card { margin-top: 16px; }
+
+  /* STAT GRID */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+  .stat { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px; }
+  .stat .k { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .stat .v { font-size: 22px; font-weight: 800; }
+  .stat .v small { font-size: 13px; color: var(--muted); font-weight: 600; }
+  .stat.hot .v { color: var(--orange); }
+  .stat.good .v { color: var(--cyan); }
+
+  /* GOLDEN RULE */
+  .golden {
+    background: linear-gradient(135deg, rgba(255,46,99,0.12), rgba(255,138,0,0.10));
+    border: 1px solid rgba(255,138,0,0.30);
+    border-radius: var(--radius); padding: 26px;
+  }
+  .golden .big { font-family: 'Anton', sans-serif; font-size: clamp(24px,6vw,34px); text-transform: uppercase; color: var(--orange); margin-bottom: 8px; line-height: 1.05; }
+  .golden p { color: var(--text); }
+  .golden .eq { display: inline-block; margin-top: 12px; font-weight: 800; font-size: 18px; color: var(--cyan); }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 26px; }
+  .timeline::before { content: ''; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--pink), var(--purple)); }
+  .tl-item { position: relative; padding-bottom: 22px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before { content: ''; position: absolute; left: -26px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 3px solid var(--pink); }
+  .tl-item.now::before { border-color: var(--cyan); box-shadow: 0 0 0 4px rgba(40,224,200,0.2); }
+  .tl-item.target::before { border-color: var(--orange); }
+  .tl-when { font-weight: 800; font-size: 16px; }
+  .tl-when .tag { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; margin-left: 8px; vertical-align: middle; }
+  .tag.now { background: rgba(40,224,200,0.18); color: var(--cyan); }
+  .tag.target { background: rgba(255,138,0,0.18); color: var(--orange); }
+  .tl-desc { color: var(--muted); font-size: 15px; }
+
+  /* CHECKLIST */
+  .check { list-style: none; }
+  .check li { display: flex; gap: 14px; align-items: flex-start; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .check li:last-child { border-bottom: none; }
+  .check input { appearance: none; -webkit-appearance: none; flex: none; width: 24px; height: 24px; border-radius: 8px; border: 2px solid var(--muted); margin-top: 2px; cursor: pointer; position: relative; transition: 0.15s; }
+  .check input:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+  .check input:checked { background: var(--grad); border-color: transparent; }
+  .check input:checked::after { content: '✓'; position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 15px; }
+  .check label { cursor: pointer; flex: 1; }
+  .check input:checked + label { color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.3); }
+  .check b { color: var(--text); }
+
+  /* PLAYBOOK */
+  .pb { list-style: none; counter-reset: pb; }
+  .pb li { position: relative; padding: 16px 16px 16px 64px; border-radius: 12px; margin-bottom: 10px; background: var(--card); border: 1px solid var(--card-border); }
+  .pb li::before { counter-increment: pb; content: counter(pb); position: absolute; left: 16px; top: 14px; width: 34px; height: 34px; border-radius: 8px; background: var(--grad2); color: #08121a; font-weight: 800; display: grid; place-items: center; }
+  .pb .time { font-weight: 800; color: var(--cyan); }
+  .pb small { color: var(--muted); }
+
+  /* STEPS (CIE) */
+  ol.steps { list-style: none; counter-reset: st; }
+  ol.steps li { position: relative; padding: 10px 0 10px 40px; }
+  ol.steps li::before { counter-increment: st; content: counter(st); position: absolute; left: 0; top: 9px; width: 26px; height: 26px; border-radius: 50%; background: var(--grad); color: #fff; font-weight: 700; font-size: 13px; display: grid; place-items: center; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 15px; }
+  th { color: var(--muted); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
+  td.price { font-weight: 800; }
+  .meia td.price { color: var(--cyan); }
+
+  /* CALLOUTS */
+  .note { border-left: 3px solid var(--orange); background: rgba(255,138,0,0.08); padding: 14px 16px; border-radius: 0 12px 12px 0; margin-top: 16px; font-size: 15px; }
+  .warn { border-left: 3px solid var(--red); background: rgba(255,77,94,0.08); padding: 14px 16px; border-radius: 0 12px 12px 0; margin-top: 16px; font-size: 15px; }
+  .ok { border-left: 3px solid var(--green); background: rgba(46,204,113,0.08); padding: 14px 16px; border-radius: 0 12px 12px 0; margin-top: 16px; font-size: 15px; }
+  .note b, .warn b, .ok b { color: var(--text); }
+
+  ul.bullets { list-style: none; }
+  ul.bullets li { padding: 8px 0 8px 26px; position: relative; }
+  ul.bullets li::before { content: '▸'; position: absolute; left: 4px; color: var(--orange); font-weight: 800; }
+
+  /* LINKS */
+  .links { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px; }
+  .links a { display: block; padding: 16px; border-radius: 12px; background: var(--card); border: 1px solid var(--card-border); color: var(--text); text-decoration: none; transition: 0.15s; }
+  .links a:hover { border-color: var(--orange); transform: translateY(-2px); }
+  .links a .lt { font-weight: 700; }
+  .links a .lu { color: var(--muted); font-size: 13px; word-break: break-all; }
+  a { color: var(--cyan); }
+
+  /* FOOTER */
+  footer { margin-top: 50px; text-align: center; color: var(--muted); font-size: 13px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); }
+  footer a { color: var(--muted); }
+
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .pill { font-size: 13px; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--card-border); }
+  .pill.no { color: var(--red); border-color: rgba(255,77,94,0.3); }
+  .pill.yes { color: var(--green); border-color: rgba(46,204,113,0.3); }
+
+  .print-btn {
+    position: fixed; bottom: 20px; right: 20px; z-index: 50;
+    background: var(--grad); color: #fff; border: none; cursor: pointer;
+    padding: 14px 20px; border-radius: 999px; font-weight: 700; font-size: 15px;
+    box-shadow: 0 8px 30px rgba(255,46,99,0.4);
+  }
+
+  /* Collapsible (carteirinha) */
+  details.collapsible { padding: 0; overflow: hidden; }
+  details.collapsible summary { list-style: none; cursor: pointer; padding: 20px 24px; font-weight: 700; font-size: 17px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  details.collapsible summary::-webkit-details-marker { display: none; }
+  details.collapsible summary::after { content: '▼'; color: var(--orange); font-size: 13px; transition: transform .2s; }
+  details.collapsible[open] summary::after { transform: rotate(180deg); }
+  details.collapsible summary:hover { color: var(--orange); }
+  details.collapsible summary .hint { font-size: 12px; color: var(--muted); font-weight: 600; }
+  details.collapsible .details-body { padding: 0 24px 24px; }
+
+  /* Calendar button */
+  .cal-btn { display: inline-flex; align-items: center; gap: 10px; margin: 18px auto 0; background: var(--grad2); color: #08121a; border: none; cursor: pointer; padding: 15px 26px; border-radius: 999px; font-weight: 800; font-size: 16px; box-shadow: 0 8px 30px rgba(40,224,200,0.35); transition: transform .12s; }
+  .cal-btn:active { transform: scale(0.97); }
+  .cal-hint { display: block; color: var(--muted); font-size: 13px; margin-top: 10px; }
+
+  /* Botão de compra — CTA principal no playbook */
+  .buy-cta { display: block; text-align: center; margin-top: 4px; padding: 16px; border-radius: 12px; background: var(--grad); color: #fff; font-weight: 800; font-size: 17px; text-decoration: none; box-shadow: 0 8px 30px rgba(255,46,99,0.35); }
+  .buy-cta:hover { filter: brightness(1.08); }
+
+  /* Largura de leitura confortável no desktop */
+  .card p, .golden p, .note, .warn, .ok, .details-body p { max-width: 72ch; }
+
+  /* Telas pequenas */
+  @media (max-width: 600px) {
+    .print-btn { position: static; display: block; width: calc(100% - 40px); margin: 28px auto 0; right: auto; bottom: auto; }
+  }
+  @media (max-width: 360px) {
+    .cd-grid { gap: 8px; }
+    .cd-unit { min-width: 0; flex: 1; }
+  }
+
+  /* Respeita quem prefere menos movimento */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    .links a:hover, .cal-btn:active { transform: none !important; }
+  }
+
+  @media print {
+    body { background: #fff; color: #111; }
+    .print-btn, .countdown { display: none; }
+    h1.title, .cd-num { -webkit-text-fill-color: #d62246; }
+    .card, .stat, .pb li, .links a { border-color: #ccc; background: #fafafa; }
+    .muted, .tl-desc { color: #555; }
+    a { color: #b3001b; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">🎸 Operação Ingresso · Grupo</span>
+    <h1 class="title">Rock in Rio<br>2026</h1>
+    <p class="subtitle">Plano de compra — <b>Dia 6 de Setembro</b> (domingo)</p>
+    <p class="lineup-note">Headliner: Calvin Harris · Cidade do Rock, RJ · 7/09 (seg) é feriado 🎉</p>
+
+    <div class="countdown">
+      <div class="cd-label">⏳ Contagem para a VENDA GERAL — 08/06, 19h</div>
+      <div class="cd-grid" id="cd">
+        <div class="cd-unit"><div class="cd-num" id="d">--</div><span>dias</span></div>
+        <div class="cd-unit"><div class="cd-num" id="h">--</div><span>horas</span></div>
+        <div class="cd-unit"><div class="cd-num" id="m">--</div><span>min</span></div>
+        <div class="cd-unit"><div class="cd-num" id="s">--</div><span>seg</span></div>
+      </div>
+    </div>
+
+    <button class="cal-btn" onclick="addToCalendar()">📅 Adicionar tudo ao calendário</button>
+    <span class="cal-hint">Otimizado para iPhone (Apple Calendar) — cria os lembretes com alarme</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- 1. RESUMO -->
+  <section>
+    <div class="sec-head"><div class="sec-num">1</div><h2>Resumo rápido</h2></div>
+    <div class="stats">
+      <div class="stat hot"><div class="k">Venda geral</div><div class="v">08/06 <small>· 19h</small></div></div>
+      <div class="stat good"><div class="k">Ingresso meia</div><div class="v">R$ 435 <small>· sem taxa</small></div></div>
+      <div class="stat"><div class="k">Limite por CPF</div><div class="v">4 <small>/dia · máx 1 meia</small></div></div>
+      <div class="stat"><div class="k">Formato</div><div class="v">Digital <small>· app Quentro</small></div></div>
+    </div>
+    <div class="note">
+      <b>Todo o grupo entra junto na venda geral (08/06, 19h).</b> Cada pessoa compra a própria meia, no próprio CPF — quanto mais gente preparada, mais chances de garantir os ingressos do dia 6.
+    </div>
+  </section>
+
+  <!-- 2. REGRA DE OURO -->
+  <section>
+    <div class="sec-head"><div class="sec-num">2</div><h2>A regra de ouro</h2></div>
+    <div class="golden">
+      <div class="big">1 meia por CPF</div>
+      <p>Cada pessoa compra a <b>própria meia</b>, no <b>próprio CPF</b>, com a <b>própria carteirinha</b>. Não existe "uma pessoa compra todas" — é impossível pra meia. Por isso o esquema certo é simples e legal:</p>
+      <span class="eq">Nº de pessoas = Nº de CPFs = Nº de meias = Nº de chances na fila</span>
+    </div>
+    <div class="warn">⚠️ O documento da meia é exigido <b>na compra</b> (número da carteirinha) <b>E na entrada</b> do festival. Sem CIE válida, não tem meia.</div>
+  </section>
+
+  <!-- 3. LINHA DO TEMPO -->
+  <section>
+    <div class="sec-head"><div class="sec-num">3</div><h2>Linha do tempo</h2></div>
+    <div class="card">
+      <div class="timeline">
+        <div class="tl-item now">
+          <div class="tl-when">Agora → 07/06 <span class="tag now">preparar</span></div>
+          <div class="tl-desc">Emitir a carteirinha (CIE/DNE), criar conta na Ticketmaster, salvar cartão/PIX e instalar o app Quentro.</div>
+        </div>
+        <div class="tl-item target">
+          <div class="tl-when">08/06 (segunda), 19h <span class="tag target">alvo</span></div>
+          <div class="tl-desc">VENDA GERAL — todo o grupo entra junto. É a nossa operação principal.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-when">06/09 (domingo)</div>
+          <div class="tl-desc">Rock in Rio — dia do show. Carteirinha física/digital na mão pra entrar.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CHECKLIST -->
+  <section>
+    <div class="sec-head"><div class="sec-num">4</div><h2>Antes do dia 8 — cada um faz</h2></div>
+    <div class="card">
+      <ul class="check" id="checklist">
+        <li><input type="checkbox" id="c1"><label for="c1"><b>Conta na Ticketmaster criada</b> — e-mail e telefone verificados, e já logado</label></li>
+        <li><input type="checkbox" id="c2"><label for="c2"><b>Carteirinha de estudante (CIE/DNE) válida</b> + <b>número anotado</b> (exigido na hora da compra)</label></li>
+        <li><input type="checkbox" id="c3"><label for="c3"><b>CPF</b> regular e em mãos</label></li>
+        <li><input type="checkbox" id="c4"><label for="c4"><b>Cartão salvo na conta</b> <b>ou PIX</b> pronto pra pagar em segundos</label></li>
+        <li><input type="checkbox" id="c5"><label for="c5"><b>App Quentro</b> instalado (onde o ingresso digital fica)</label></li>
+        <li><input type="checkbox" id="c6"><label for="c6"><b>Setor combinado</b> com o grupo (Gramado x Comfort Zone) pra todos ficarem juntos</label></li>
+      </ul>
+      <div class="warn">⚠️ <b>Carteirinha de 2025 já venceu</b> (validade até 31/03/2026). Pro festival em setembro precisa ser a de <b>2026</b> (vale até 31/03/2027).</div>
+    </div>
+  </section>
+
+  <!-- 5. CIE -->
+  <section>
+    <div class="sec-head"><div class="sec-num">5</div><h2>Carteirinha (CIE/DNE) — passo a passo</h2></div>
+    <details class="card collapsible">
+      <summary>Ver passo a passo da carteirinha <span class="hint">toque para abrir</span></summary>
+      <div class="details-body">
+      <p style="margin-bottom:14px;color:var(--muted)">A versão digital fica pronta <b style="color:var(--text)">na hora</b> que aprovam os documentos. Emita só pelas entidades oficiais:</p>
+      <div class="pill-row" style="margin-bottom:18px">
+        <span class="pill">📚 Médio/Fund./Técnico → <b>UBES</b></span>
+        <span class="pill">🎓 Superior → <b>UNE</b></span>
+        <span class="pill">🔬 Pós → <b>ANPG</b></span>
+        <span class="pill">📱 App <b>"DNE Digital"</b></span>
+      </div>
+
+      <p style="font-weight:700;margin-bottom:8px">Tenha em mãos:</p>
+      <ul class="bullets" style="margin-bottom:18px">
+        <li>Foto 3×4 recente</li>
+        <li>Documento com foto (RG, CNH, passaporte ou RNE)</li>
+        <li>Comprovante de matrícula 2026 <span style="color:var(--red)">(boleto/mensalidade NÃO serve)</span></li>
+        <li>Cartão de crédito (~R$ 50)</li>
+      </ul>
+
+      <p style="font-weight:700;margin-bottom:8px">Passo a passo:</p>
+      <ol class="steps">
+        <li>Abra o app <b>DNE Digital</b> ou o site da entidade (UNE / UBES / ANPG)</li>
+        <li>Crie conta / faça login</li>
+        <li>Preencha os dados (nome, CPF, instituição, curso, grau)</li>
+        <li>Anexe foto + documento + comprovante de matrícula</li>
+        <li>Pague (~R$ 50 no cartão — libera mais rápido que boleto)</li>
+        <li>Aguarde a aprovação dos documentos</li>
+        <li><b>Aprovou → a CIE digital aparece na hora</b> e já vale pra comprar e pra entrar</li>
+        <li><b>Anote o número do DNE/CIE</b> — é ele que vai no checkout no dia 8</li>
+      </ol>
+
+      <div class="warn">⏰ <b>Não deixe pra véspera.</b> A aprovação pode levar de horas a 1–2 dias úteis. Como a venda é segunda (8/06), o ideal é emitir <b>hoje ou amanhã</b>.</div>
+      <div class="warn">🚫 Use só <b>UNE/UBES/ANPG</b>. Fuja de site de "carteirinha barata" fora do modelo nacional — pode ser recusada na compra e na portaria. Confira autenticidade em <a href="https://validardne.org.br" target="_blank" rel="noopener">validardne.org.br</a>.</div>
+      </div>
+    </details>
+  </section>
+
+  <!-- 6. PLAYBOOK -->
+  <section>
+    <div class="sec-head"><div class="sec-num">6</div><h2>Dia 8 — minuto a minuto</h2></div>
+    <ul class="pb">
+      <li><span class="time">18h30</span> — Todos logados, <b>1 aba só</b>, na página oficial do evento. Número da carteirinha e cartão/PIX à mão.</li>
+      <li><span class="time">18h50</span> — Entrar na <b>sala de espera (fila virtual) ANTES das 19h</b>. Quem está dentro na abertura concorre melhor.</li>
+      <li><span class="time">19h00</span> — Abre. <b>NÃO atualizar a página</b> (refresh = perde a vez). Espera a fila liberar.</li>
+      <li><b>Ao entrar:</b> seleciona <b>dia 6</b> → setor combinado → marca <b>meia</b> → digita o <b>nº da CIE</b> → paga <b>rápido</b> (tem cronômetro!).</li>
+      <li><b>Confirmou?</b> Avisa o grupo na hora ✅</li>
+      <li><b>Esgotou / não conseguiu?</b> Não é o fim → vai pro Plano B 👇</li>
+    </ul>
+    <a class="buy-cta" href="https://www.ticketmaster.com.br/event/rockinrio" target="_blank" rel="noopener">🎟️ Abrir a Ticketmaster — comprar dia 6/09</a>
+    <div class="note">📡 <b>Coordenação:</b> defina 1 pessoa pra dar o "vai" e acompanhar o status de todos em tempo real no grupo. Quem garantir primeiro entra no plantão de retorno pra ajudar os que faltarem.</div>
+  </section>
+
+  <!-- 7. PLANO B -->
+  <section>
+    <div class="sec-head"><div class="sec-num">7</div><h2>Plano B (e é forte)</h2></div>
+    <div class="card">
+      <ul class="bullets">
+        <li><b>Ingresso volta.</b> Reservas não pagas expiram em minutos e o estoque retorna. "Esgotado" no começo quase sempre é temporário.</li>
+        <li><b>Varie a quantidade</b> (1, 2, 3) — o que volta vem em lote quebrado.</li>
+        <li><b>Varie o setor</b> — o retorno é irregular; um abre enquanto o outro está fechado.</li>
+        <li><b>Comfort Zone</b> como setor alternativo se o Gramado fechar.</li>
+        <li><b>Muitos olhos</b> = muitas chances. Cada um no plantão, na sua aba, sem refresh agressivo.</li>
+      </ul>
+      <div class="ok">✅ Só compre revenda/transferência pelo <b>canal OFICIAL</b> (app Quentro). Foge de cambista e "link sem fila" — é golpe ou bloqueio.</div>
+    </div>
+  </section>
+
+  <!-- 8. PAGAMENTO -->
+  <section>
+    <div class="sec-head"><div class="sec-num">8</div><h2>Preços & pagamento</h2></div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Ingresso (por dia)</th><th>Preço</th></tr></thead>
+        <tbody>
+          <tr class="meia"><td><b>Meia-entrada</b> 🎯</td><td class="price">R$ 435,00</td></tr>
+          <tr><td>Inteira</td><td class="price">R$ 870,00</td></tr>
+        </tbody>
+      </table>
+      <div class="pill-row">
+        <span class="pill yes">✔ Cartão de crédito (até 6x sem juros)</span>
+        <span class="pill yes">✔ PIX (à vista)</span>
+        <span class="pill no">✘ Cartão corporativo</span>
+        <span class="pill no">✘ Taxa de serviço (não tem!)</span>
+      </div>
+      <div class="note">💡 Pra quem tem direito à meia, <b>R$ 435 é o melhor preço</b>. Deixe a forma de pagamento já configurada antes das 19h pra fechar em segundos.</div>
+    </div>
+  </section>
+
+  <!-- 9. LINKS -->
+  <section>
+    <div class="sec-head"><div class="sec-num">9</div><h2>Links oficiais (use só estes)</h2></div>
+    <div class="links">
+      <a href="https://www.ticketmaster.com.br/event/rockinrio" target="_blank" rel="noopener">
+        <div class="lt">🎟️ Comprar — Ticketmaster</div>
+        <div class="lu">ticketmaster.com.br/event/rockinrio</div>
+      </a>
+      <a href="https://rockinrio.com/rio/pt-br/line-up/" target="_blank" rel="noopener">
+        <div class="lt">🎤 Line-up do dia 6</div>
+        <div class="lu">rockinrio.com/rio/pt-br/line-up</div>
+      </a>
+      <a href="https://rockinrio.com/rio/pt-br/faq/" target="_blank" rel="noopener">
+        <div class="lt">❓ FAQ oficial (meia, pagamento)</div>
+        <div class="lu">rockinrio.com/rio/pt-br/faq</div>
+      </a>
+      <a href="https://validardne.org.br" target="_blank" rel="noopener">
+        <div class="lt">🛡️ Validar carteirinha (DNE)</div>
+        <div class="lu">validardne.org.br</div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    Dados confirmados em fontes oficiais e de imprensa em 02/06/2026 — preços, datas e regras podem mudar; sempre reconfira nos canais oficiais acima.<br>
+    Plano feito para compra legítima, dentro das regras da Ticketmaster e da Lei da Meia-Entrada. 🎸
+  </footer>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨️ Salvar PDF / Imprimir</button>
+
+<script>
+  // Contagem regressiva para a venda geral: 08/06/2026 19h00 (Brasília, UTC-3)
+  var target = new Date('2026-06-08T19:00:00-03:00').getTime();
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  function tick(){
+    var now = new Date().getTime();
+    var diff = target - now;
+    var cd = document.getElementById('cd');
+    if (diff <= 0){
+      cd.innerHTML = '<div class="cd-live">🟢 VENDA ABERTA — bora!</div>';
+      return;
+    }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('d').textContent = d;
+    document.getElementById('h').textContent = pad(h);
+    document.getElementById('m').textContent = pad(m);
+    document.getElementById('s').textContent = pad(s);
+  }
+  tick(); setInterval(tick, 1000);
+
+  // Persiste o checklist no navegador
+  document.querySelectorAll('#checklist input').forEach(function(box){
+    var key = 'rir_' + box.id;
+    if (localStorage.getItem(key) === '1') box.checked = true;
+    box.addEventListener('change', function(){
+      localStorage.setItem(key, box.checked ? '1' : '0');
+    });
+  });
+
+  // Adicionar todas as tarefas ao calendário (otimizado p/ iPhone)
+  function addToCalendar(){
+    var stamp = '20260602T120000Z';
+    function ev(uid, start, end, summary, desc, alarms){
+      var L = ['BEGIN:VEVENT','UID:'+uid+'@plano-rir-2026','DTSTAMP:'+stamp,'DTSTART:'+start,'DTEND:'+end,'SUMMARY:'+summary,'DESCRIPTION:'+desc];
+      (alarms||[]).forEach(function(t){ L.push('BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+summary,'TRIGGER:'+t,'END:VALARM'); });
+      L.push('END:VEVENT');
+      return L.join('\r\n');
+    }
+    var ics = [
+      'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Plano Rock in Rio 2026//PT-BR','CALSCALE:GREGORIAN','METHOD:PUBLISH',
+      ev('cie','20260603T100000','20260603T103000','Emitir carteirinha CIE/DNE (Rock in Rio)','Emitir a carteirinha de estudante digital pela UNE/UBES/ANPG ou app DNE Digital. Anotar o numero (exigido na compra). Nao deixar pra ultima hora.',['-P1D','-PT5M']),
+      ev('prep','20260607T120000','20260607T123000','Preparar compra (Rock in Rio)','Conta Ticketmaster criada e logada, cartao salvo ou PIX pronto, app Quentro instalado, numero da carteirinha anotado e setor combinado.',['-PT5M']),
+      ev('fila','20260608T185000','20260608T190000','Entrar na FILA VIRTUAL (Rock in Rio)','Entrar na sala de espera antes das 19h. Uma aba so, sem refresh. Cartao e numero da carteirinha em maos.',['-PT15M','-PT5M']),
+      ev('venda','20260608T190000','20260608T200000','VENDA GERAL - comprar ingresso (dia 6/09)','Abre 19h na Ticketmaster. Selecionar dia 6/09, setor, MEIA, digitar o numero da carteirinha e pagar rapido. Nao atualizar a pagina!',['-P1D','-PT1H','-PT10M']),
+      ev('show','20260906T140000','20260906T235900','ROCK IN RIO - dia do show (Calvin Harris)','Dia 6/09 na Cidade do Rock. Levar a carteirinha (fisica/digital) e o ingresso no app Quentro.',['-P1D']),
+      'END:VCALENDAR'
+    ].join('\r\n');
+
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (isIOS) {
+      // iPhone/Safari: abre direto o seletor "Adicionar ao Calendario"
+      window.location.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+    } else {
+      var blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = 'rock-in-rio-2026.ics';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+    }
+  }
+</script>
+</body>
+</html>

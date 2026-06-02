@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>padilha.site</title>
+<meta name="description" content="Páginas avulsas que o Felipe vai jogando no ar.">
+<meta name="color-scheme" content="dark">
+<style>
+  :root{
+    --bg:#0a0a0c; --panel:#141419; --border:#2a2a33;
+    --text:#ececef; --muted:#9b9ba6; --a1:#ff2e63; --a2:#ff8a3d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--text);min-height:100dvh;
+    display:flex;flex-direction:column;align-items:center;
+    padding:clamp(24px,6vw,72px) 20px;line-height:1.5;
+    background-image:radial-gradient(60% 50% at 50% -10%, rgba(255,46,99,.10), transparent 70%);
+  }
+  .wrap{width:100%;max-width:640px}
+  header{margin-bottom:40px}
+  .mark{
+    font-size:clamp(28px,7vw,40px);font-weight:800;letter-spacing:-.02em;
+    background:linear-gradient(100deg,var(--a1),var(--a2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;
+  }
+  .tag{color:var(--muted);margin-top:10px;font-size:16px}
+  .grid{display:flex;flex-direction:column;gap:14px}
+  a.card{
+    display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;
+    background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:18px 20px;
+    transition:transform .15s ease,border-color .15s ease,background .15s ease;
+  }
+  a.card:hover{transform:translateY(-2px);border-color:#3a3a46;background:#181820}
+  .ic{
+    flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:24px;
+    background:linear-gradient(135deg,rgba(255,46,99,.18),rgba(255,138,61,.18));border:1px solid var(--border);
+  }
+  .ct{flex:1;min-width:0}
+  .ct h2{font-size:16px;font-weight:650;letter-spacing:-.01em}
+  .ct p{color:var(--muted);font-size:14px;margin-top:3px}
+  .arw{color:var(--muted);flex:none;transition:transform .15s ease}
+  a.card:hover .arw{transform:translateX(3px);color:var(--text)}
+  footer{margin-top:48px;color:#5e5e68;font-size:13px}
+  footer a{color:#8a8a95}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="mark">padilha.site</div>
+      <p class="tag">Um canto pra páginas que eu crio e mando pra galera. 👋</p>
+    </header>
+
+    <main class="grid">
+      <a class="card" href="/rockinrio/">
+        <div class="ic">🎸</div>
+        <div class="ct">
+          <h2>Rock in Rio 2026 — Planejamento</h2>
+          <p>Estratégia pra garantir os ingressos com os amigos.</p>
+        </div>
+        <div class="arw">→</div>
+      </a>
+    </main>
+
+    <footer>
+      <span id="y"></span> · feito com <a href="https://claude.com/claude-code">Claude</a>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
