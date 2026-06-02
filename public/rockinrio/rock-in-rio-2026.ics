@@ -1,0 +1,91 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Plano Rock in Rio 2026//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:cie@plano-rir-2026
+DTSTAMP:20260602T120000Z
+DTSTART:20260603T100000
+DTEND:20260603T103000
+SUMMARY:Emitir carteirinha CIE/DNE - so quem vai de meia
+DESCRIPTION:OPCIONAL - so quem vai comprar meia. Emitir a carteirinha de estudante digital pela UNE/UBES/ANPG ou app DNE Digital. Anotar o numero (exigido na compra). Nao deixar pra ultima hora.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Emitir carteirinha CIE/DNE - so quem vai de meia
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Emitir carteirinha CIE/DNE - so quem vai de meia
+TRIGGER:-PT5M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:prep@plano-rir-2026
+DTSTAMP:20260602T120000Z
+DTSTART:20260607T120000
+DTEND:20260607T123000
+SUMMARY:Preparar compra (Rock in Rio)
+DESCRIPTION:Conta Ticketmaster criada e logada, cartao salvo ou PIX pronto, app Quentro instalado e conta criada (mesmo e-mail da compra), numero da carteirinha anotado e setor combinado.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Preparar compra (Rock in Rio)
+TRIGGER:-PT5M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:fila@plano-rir-2026
+DTSTAMP:20260602T120000Z
+DTSTART:20260608T185000
+DTEND:20260608T190000
+SUMMARY:Entrar na FILA VIRTUAL (Rock in Rio)
+DESCRIPTION:Entrar na sala de espera antes das 19h. Uma aba so, sem refresh. Cartao em maos (e o numero da carteirinha, se for meia).
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Entrar na FILA VIRTUAL (Rock in Rio)
+TRIGGER:-PT15M
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Entrar na FILA VIRTUAL (Rock in Rio)
+TRIGGER:-PT5M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:venda@plano-rir-2026
+DTSTAMP:20260602T120000Z
+DTSTART:20260608T190000
+DTEND:20260608T200000
+SUMMARY:VENDA GERAL - comprar ingresso (dia 6/09)
+DESCRIPTION:Abre 19h na Ticketmaster. Selecionar dia 6/09, setor, escolher meia (com numero da carteirinha) ou inteira, e pagar rapido. Nao atualizar a pagina!
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:VENDA GERAL - comprar ingresso (dia 6/09)
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:VENDA GERAL - comprar ingresso (dia 6/09)
+TRIGGER:-PT1H
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:VENDA GERAL - comprar ingresso (dia 6/09)
+TRIGGER:-PT10M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:show@plano-rir-2026
+DTSTAMP:20260602T120000Z
+DTSTART:20260906T140000
+DTEND:20260906T235900
+SUMMARY:ROCK IN RIO - dia do show (Calvin Harris)
+DESCRIPTION:Dia 6/09 na Cidade do Rock. Levar a carteirinha (fisica/digital) e o ingresso no app Quentro.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ROCK IN RIO - dia do show (Calvin Harris)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
