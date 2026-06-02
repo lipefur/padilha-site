@@ -502,6 +502,7 @@
   <footer>
     Dados confirmados em fontes oficiais e de imprensa em 02/06/2026 — preços, datas e regras podem mudar; sempre reconfira nos canais oficiais acima.<br>
     Plano feito para compra legítima, dentro das regras da Ticketmaster e da Lei da Meia-Entrada. 🎸
+    <br><span id="visitas" style="opacity:0;transition:opacity .5s ease;display:inline-block;margin-top:14px;font-size:13px;letter-spacing:.3px;" title="Visitas (conta 1x por navegador por dia)">👁 <strong id="visitas-n">—</strong> visitas</span>
   </footer>
 
 </div>
@@ -572,6 +573,17 @@
       setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
     }
   }
+
+  // Contador de visitas (Abacus, servico gratuito). Conta 1x por navegador por dia; some sozinho se o servico falhar.
+  (function(){
+    var NS='padilha', KEY='rockinrio', BASE='https://abacus.jasoncameron.dev';
+    var box=document.getElementById('visitas'), n=document.getElementById('visitas-n');
+    function show(v){ if(n) n.textContent=Number(v).toLocaleString('pt-BR'); if(box) box.style.opacity='1'; }
+    function hide(){ if(box) box.style.display='none'; }
+    var hit=false;
+    try { var today=new Date().toISOString().slice(0,10); if(localStorage.getItem('rir_visit_day')!==today){ localStorage.setItem('rir_visit_day', today); hit=true; } } catch(e){ hit=false; }
+    fetch(BASE+(hit?'/hit/':'/get/')+NS+'/'+KEY).then(function(r){ return r.json(); }).then(function(d){ if(d && d.value!=null) show(d.value); else hide(); }).catch(hide);
+  })();
 </script>
 </body>
 </html>
