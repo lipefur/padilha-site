@@ -260,10 +260,17 @@
     .card, .stat, .pb li, .links a { border-color: #ccc; background: #fafafa; }
     .muted, .tl-desc { color: #555; }
     a { color: #b3001b; }
+    .dday { display: none !important; }
   }
+  /* Faixa "dia D" (dia da venda) */
+  .dday { display: none; text-align: center; font-weight: 800; font-size: 15px; line-height: 1.4; padding: 12px 16px; background: linear-gradient(110deg, var(--pink), var(--orange)); color: #fff; position: sticky; top: 0; z-index: 50; box-shadow: 0 6px 24px rgba(0,0,0,.35); }
+  .dday.open { background: linear-gradient(110deg, #1aa553, #2ecc71); }
+  .dday b { font-weight: 900; }
 </style>
 </head>
 <body>
+
+<div id="dday" class="dday" role="status" aria-live="polite"></div>
 
 <header class="hero">
   <div class="wrap">
@@ -583,6 +590,22 @@
     var hit=false;
     try { var today=new Date().toISOString().slice(0,10); if(localStorage.getItem('rir_visit_day')!==today){ localStorage.setItem('rir_visit_day', today); hit=true; } } catch(e){ hit=false; }
     fetch(BASE+(hit?'/hit/':'/get/')+NS+'/'+KEY).then(function(r){ return r.json(); }).then(function(d){ if(d && d.value!=null) show(d.value); else hide(); }).catch(hide);
+  })();
+
+  // Faixa "dia D": aparece no dia da venda; vira verde quando abre (19h); some sozinha depois.
+  (function(){
+    var b=document.getElementById('dday');
+    if(!b) return;
+    var dayStart=new Date('2026-06-08T00:00:00-03:00').getTime();
+    var saleStart=new Date('2026-06-08T19:00:00-03:00').getTime();
+    var saleEnd=new Date('2026-06-09T02:00:00-03:00').getTime();
+    function upd(){
+      var now=Date.now();
+      if(now>=dayStart && now<saleStart){ b.className='dday'; b.innerHTML='🔴 <b>É HOJE!</b> Venda geral às <b>19h</b> — confere o checklist 👇'; b.style.display='block'; }
+      else if(now>=saleStart && now<saleEnd){ b.className='dday open'; b.innerHTML='🟢 <b>VENDA ABERTA AGORA</b> — bora garantir o ingresso! 🎸'; b.style.display='block'; }
+      else { b.style.display='none'; }
+    }
+    upd(); setInterval(upd, 15000);
   })();
 </script>
 </body>
