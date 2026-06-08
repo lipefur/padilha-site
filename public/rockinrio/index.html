@@ -145,6 +145,10 @@
   .tl-item::before { content: ''; position: absolute; left: -26px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 3px solid var(--pink); }
   .tl-item.now::before { border-color: var(--cyan); box-shadow: 0 0 0 4px rgba(40,224,200,0.2); }
   .tl-item.target::before { border-color: var(--orange); }
+  .tl-item.done::before { border-color: var(--green); background: var(--green); box-shadow: none; }
+  .tl-item.done .tl-when { opacity: .55; }
+  .tl-item.done .tl-desc { opacity: .45; }
+  .tl-item.done .tl-when::after { content: ' ✓'; color: var(--green); font-weight: 900; }
   .tl-when { font-weight: 800; font-size: 16px; }
   .tl-when .tag { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; margin-left: 8px; vertical-align: middle; }
   .tag.now { background: rgba(40,224,200,0.18); color: var(--cyan); }
@@ -326,15 +330,15 @@
     <div class="sec-head"><div class="sec-num">3</div><h2>Linha do tempo</h2></div>
     <div class="card">
       <div class="timeline">
-        <div class="tl-item now">
-          <div class="tl-when">Agora → 07/06 <span class="tag now">preparar</span></div>
+        <div class="tl-item" data-phase="0">
+          <div class="tl-when">Até 07/06 <span class="tag now">preparar</span></div>
           <div class="tl-desc">Criar conta na Ticketmaster, salvar cartão/PIX e instalar o Quentro. Carteirinha (CIE/DNE), só quem vai de meia.</div>
         </div>
-        <div class="tl-item target">
+        <div class="tl-item target" data-phase="1">
           <div class="tl-when">08/06 (segunda), 19h <span class="tag target">alvo</span></div>
           <div class="tl-desc">VENDA GERAL — todo o grupo entra junto. É a nossa operação principal.</div>
         </div>
-        <div class="tl-item">
+        <div class="tl-item" data-phase="2">
           <div class="tl-when">06/09 (domingo)</div>
           <div class="tl-desc">Rock in Rio — dia do show. Carteirinha física/digital na mão pra entrar.</div>
         </div>
@@ -606,6 +610,19 @@
       else { b.style.display='none'; }
     }
     upd(); setInterval(upd, 15000);
+  })();
+
+  // Linha do tempo date-aware: etapa atual = "agora"; etapas passadas = concluidas (verde + check).
+  (function(){
+    var b1=new Date('2026-06-08T00:00:00-03:00').getTime(); // fim do preparo
+    var b2=new Date('2026-06-09T00:00:00-03:00').getTime(); // fim do dia da venda
+    var phase = Date.now() < b1 ? 0 : (Date.now() < b2 ? 1 : 2);
+    document.querySelectorAll('.tl-item[data-phase]').forEach(function(it){
+      var p = +it.getAttribute('data-phase');
+      it.classList.remove('now','done');
+      if(p < phase) it.classList.add('done');
+      else if(p === phase) it.classList.add('now');
+    });
   })();
 </script>
 </body>
