@@ -37,10 +37,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:fila@plano-rir-2026
 DTSTAMP:20260608T170000Z
-DTSTART:20260608T185000
+DTSTART:20260608T183000
 DTEND:20260608T190000
 SUMMARY:Entrar na FILA VIRTUAL (Rock in Rio)
-DESCRIPTION:Entrar na sala de espera antes das 19h. Uma aba so, sem refresh. Cartao em maos (e o numero da carteirinha, se for meia).
+DESCRIPTION:Sala de espera abre 18h30 (30 min antes da venda). 1 posicao por conta - varios aparelhos nao dao posicao extra. Uma aba so, sem refresh. Cartao em maos (e o numero da carteirinha, se for meia).
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Entrar na FILA VIRTUAL (Rock in Rio)
