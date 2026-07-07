@@ -3,170 +3,272 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ski no Chile — 2 opções de hospedagem</title>
-<meta name="description" content="El Colorado x La Parva: duas opções de apê pra galera esquiar no Chile. Compara e escolhe.">
-<meta name="color-scheme" content="dark">
-<meta property="og:title" content="Ski no Chile — 2 opções de hospedagem">
-<meta property="og:description" content="El Colorado x La Parva: compara as duas opções (7 pessoas · 3 noites · agosto).">
+<title>Ski no Chile: El Colorado x La Parva — qual vai ser? 🎿</title>
+<meta name="description" content="Duas opções de apê inteiro pra 7 na cordilheira do Chile (ski, agosto). Compara preço, espaço, nota e mapa — e vota qual vai ser. El Colorado (9,7) x La Parva (100 m², 2 banheiros).">
+<meta name="theme-color" content="#0f2c40">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="padilha.site">
+<meta property="og:title" content="Ski no Chile: El Colorado x La Parva 🎿 — vote qual vai ser">
+<meta property="og:description" content="7 pessoas · 3 noites · agosto. Compara as 2 opções (preço, espaço, nota, mapa) e vota no grupo. Toque pra abrir.">
+<meta property="og:image" content="https://cf.bstatic.com/xdata/images/hotel/max1024x768/511848062.jpg?k=410332ffff55504944ddcfa663dff96d5735084b1286641acb58774649b1f3ed&o=">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="768">
+<meta property="og:url" content="https://padilha.site/ski-chile/">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root{
-    --bg:#0a0a0c; --panel:#141419; --panel2:#181820; --border:#2a2a33;
-    --text:#ececef; --muted:#9b9ba6; --a1:#ff2e63; --a2:#ff8a3d;
-    --green:#3ddc84; --amber:#ffb340; --blue:#4aa3ff;
+    --navy:#0f2c40; --blue:#1f6f8b; --teal:#2a9d8f; --gold:#e8892b;
+    --green:#1e7145; --ink:#233b48; --bg:#eef3f7; --wa:#25d366;
+    --win:#e4f6ec; --winln:#bfe6cd;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg);color:var(--text);min-height:100dvh;line-height:1.5;
-    padding:clamp(20px,5vw,56px) 18px;
-    background-image:radial-gradient(70% 55% at 50% -10%, rgba(74,163,255,.12), transparent 70%);
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{width:100%;max-width:760px;margin:0 auto}
-  header{margin-bottom:26px}
-  .eyebrow{color:var(--blue);font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:7px}
-  h1{
-    font-size:clamp(26px,7vw,38px);font-weight:800;letter-spacing:-.02em;margin-top:8px;
-    background:linear-gradient(100deg,#fff,#b9c6d6);-webkit-background-clip:text;background-clip:text;color:transparent;
-  }
-  .lead{color:var(--muted);margin-top:10px;font-size:16px;max-width:56ch}
-  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-  .pill{background:var(--panel);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:#c7c7d1}
-  .pill b{color:#fff;font-weight:650}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);padding:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.12)}
 
-  .cards{display:grid;grid-template-columns:1fr;gap:16px;margin-top:26px}
-  @media(min-width:680px){.cards{grid-template-columns:1fr 1fr}}
+  header{background:linear-gradient(120deg,#0f2c40,#1f6f8b);color:#fff;padding:26px 28px 22px;position:relative}
+  header .bar{position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--gold)}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#9fd2e0;display:flex;align-items:center;gap:7px}
+  header h1{font-size:clamp(22px,5.4vw,29px);margin:8px 0 6px;letter-spacing:-.01em}
+  header .lead{opacity:.92;font-size:14.5px;max-width:60ch}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .chip{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:20px;padding:5px 11px;font-size:12.5px}
+  .chip b{font-weight:700}
 
-  .card{
-    display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--border);
-    border-radius:18px;overflow:hidden;transition:transform .15s ease,border-color .15s ease;
-  }
-  .card:hover{transform:translateY(-2px);border-color:#3a3a46}
-  .card .top{padding:18px 18px 14px;position:relative}
-  .rank{
-    position:absolute;top:16px;right:16px;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;
-  }
-  .rank.best{background:rgba(61,220,132,.14);color:var(--green);border:1px solid rgba(61,220,132,.35)}
-  .rank.space{background:rgba(255,179,64,.14);color:var(--amber);border:1px solid rgba(255,179,64,.35)}
-  .place{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px}
-  .card h2{font-size:19px;font-weight:750;letter-spacing:-.01em;margin-top:5px;padding-right:96px}
-  .score{display:flex;align-items:baseline;gap:8px;margin-top:12px}
-  .score .n{font-size:22px;font-weight:800;color:#fff}
-  .score .lbl{font-size:13px;color:var(--muted)}
-  .stars{color:var(--amber);font-size:13px}
+  section{padding:20px 26px}
+  h2{font-size:16px;color:var(--navy);margin:0 0 13px;border-left:4px solid var(--gold);padding-left:9px}
+  .sub{font-size:12.5px;color:#789;margin:-7px 0 13px;padding-left:13px}
 
-  .price{margin:14px 0 4px;padding:14px;background:var(--panel2);border:1px solid var(--border);border-radius:12px}
-  .price .big{font-size:28px;font-weight:800;color:#fff;line-height:1}
-  .price .per{font-size:14px;color:var(--muted);font-weight:600}
-  .price .sub{font-size:12.5px;color:var(--muted);margin-top:4px}
+  /* cards versus */
+  .vs{display:grid;grid-template-columns:1fr;gap:14px;position:relative}
+  @media(min-width:660px){.vs{grid-template-columns:1fr 1fr}}
+  .opt{border:1px solid #dde8ee;border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+  .opt .cover{position:relative;height:172px;background:#33505f;cursor:pointer;display:block}
+  .opt .cover img{width:100%;height:100%;object-fit:cover;display:block}
+  .opt .nota{position:absolute;top:12px;right:12px;background:var(--teal);color:#fff;border-radius:11px;padding:6px 10px;text-align:center;min-width:64px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+  .opt .nota b{font-size:18px;display:block;line-height:1}.opt .nota span{font-size:9px;opacity:.95;text-transform:uppercase;letter-spacing:.03em}
+  .opt .tag{position:absolute;left:12px;top:12px;font-size:11px;font-weight:700;color:#fff;padding:4px 9px;border-radius:20px;backdrop-filter:blur(2px)}
+  .tag.g{background:rgba(30,113,69,.86)}.tag.o{background:rgba(232,137,43,.9)}
+  .opt .body{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1}
+  .opt h3{font-size:17px;color:var(--navy);letter-spacing:-.01em}
+  .opt .loc{font-size:12.5px;color:#789;margin-top:2px}
+  .opt .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:13px 0}
+  .opt .cell{background:#f4f8fb;border:1px solid #e2ebf1;border-radius:9px;padding:8px 10px}
+  .opt .cell .n{font-size:10px;color:#789;text-transform:uppercase;letter-spacing:.03em}
+  .opt .cell .v{font-size:14px;font-weight:700;color:var(--navy);margin-top:1px}
+  .opt .cell .v small{font-weight:600;color:#667;font-size:11.5px}
+  .btns{display:flex;gap:8px;margin-top:auto}
+  .btn{flex:1;text-align:center;text-decoration:none;padding:11px 10px;border-radius:10px;font-weight:700;font-size:13.5px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+  .btn.detail{background:#eaf1f5;color:var(--navy);border:1px solid #d3e0e8}
+  .btn.detail:hover{background:#dfeaf0}
+  .btn.vote{background:var(--wa);color:#fff}
+  .btn.vote:hover{filter:brightness(.95)}
+  .vslabel{align-self:center;justify-self:center;font-weight:800;color:var(--gold);font-size:15px;background:#fff;border:2px solid var(--gold);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(0,0,0,.12)}
+  @media(min-width:660px){.vslabel{position:absolute;left:50%;top:86px;transform:translate(-50%,-50%);z-index:3;margin:0}}
+  @media(max-width:659px){.vslabel{margin:-4px auto}}
 
-  .facts{list-style:none;padding:16px 18px 4px;display:flex;flex-direction:column;gap:9px;font-size:14px}
-  .facts li{display:flex;gap:9px;color:#cdcdd6}
-  .facts .k{color:var(--muted);flex:none;width:20px;text-align:center}
-  .facts b{color:#fff;font-weight:600}
+  /* tabela frente a frente */
+  .cmp{width:100%;border-collapse:collapse;font-size:13px;border-radius:10px;overflow:hidden}
+  .cmp th{background:var(--navy);color:#fff;padding:10px 8px;font-size:12.5px;text-align:center}
+  .cmp th:first-child{text-align:left;width:30%}
+  .cmp td{border-bottom:1px solid #e6edf2;padding:9px 10px;text-align:center;vertical-align:middle}
+  .cmp td:first-child{text-align:left;color:#667;font-weight:600;font-size:12px}
+  .cmp tr:last-child td{border-bottom:none}
+  .cmp .win{background:var(--win);font-weight:800;color:var(--green);position:relative}
+  .cmp .win::after{content:"✓";position:absolute;top:4px;right:6px;font-size:10px;color:var(--green)}
+  .cmp b{color:var(--navy)}
 
-  .note{margin:6px 18px 0;font-size:13px;padding:9px 11px;border-radius:10px;line-height:1.45}
-  .note.warn{background:rgba(255,179,64,.10);border:1px solid rgba(255,179,64,.28);color:#f0c886}
-  .note.good{background:rgba(61,220,132,.10);border:1px solid rgba(61,220,132,.28);color:#a5e8c2}
+  /* votação */
+  .poll{background:linear-gradient(135deg,#0f2c40,#1f6f8b);color:#fff;border-radius:14px;padding:22px 20px;text-align:center}
+  .poll h2{color:#fff;border:none;padding:0;font-size:19px;margin-bottom:5px}
+  .poll p{font-size:13px;opacity:.9;max-width:44ch;margin:0 auto 16px}
+  .poll .vbtns{display:grid;grid-template-columns:1fr;gap:11px;max-width:460px;margin:0 auto}
+  @media(min-width:480px){.poll .vbtns{grid-template-columns:1fr 1fr}}
+  .vbtn{background:#fff;border:none;border-radius:12px;padding:15px 12px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:11px;text-decoration:none;transition:transform .12s ease}
+  .vbtn:hover{transform:translateY(-2px)}
+  .vbtn .em{font-size:26px;flex:none}
+  .vbtn .tx{flex:1;min-width:0}
+  .vbtn .tx .t{display:block;font-size:15px;font-weight:800;color:var(--navy);line-height:1.15}
+  .vbtn .tx .s{display:block;font-size:11.5px;color:#667;margin-top:3px}
+  .vbtn .wa{flex:none;background:var(--wa);color:#fff;font-size:11px;font-weight:700;padding:5px 9px;border-radius:20px;display:flex;align-items:center;gap:4px}
+  .voted{margin-top:14px;font-size:13px;font-weight:700;color:#bfe6cd;min-height:19px}
+  .poll .note{font-size:11px;opacity:.72;margin-top:9px}
 
-  .cta{
-    margin:16px 18px 18px;display:flex;align-items:center;justify-content:center;gap:8px;
-    text-decoration:none;color:#fff;font-weight:700;font-size:15px;padding:13px 16px;border-radius:12px;
-    background:linear-gradient(100deg,var(--a1),var(--a2));transition:opacity .15s ease;
-  }
-  .cta:hover{opacity:.92}
+  /* veredito */
+  .verdict{background:#f6f9fb;border:1px solid #e2ebf1;border-radius:12px;padding:16px 18px}
+  .verdict p{font-size:14px;color:#3a4b57;margin-bottom:8px}.verdict p:last-child{margin-bottom:0}
+  .verdict b{color:var(--navy)}
 
-  .verdict{
-    margin-top:26px;background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:18px 20px;
-  }
-  .verdict h3{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px}
-  .verdict p{color:#c7c7d1;font-size:14.5px;margin-bottom:8px}
-  .verdict p:last-child{margin-bottom:0}
-  .verdict b{color:#fff}
+  .facts{font-size:13px;color:#3a4b57}.facts li{margin:5px 0 5px 3px;list-style:none;padding-left:20px;position:relative}
+  .facts li::before{content:"▸";position:absolute;left:2px;color:var(--gold)}
+  .facts b{color:var(--navy)}
 
-  footer{margin-top:34px;color:#5e5e68;font-size:13px;text-align:center}
-  footer a{color:#8a8a95}
+  footer{padding:16px 26px 24px;font-size:11.3px;color:#789;background:#f0f5f8}
+  footer a{color:var(--blue)}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="eyebrow">🎿 Viagem de ski</div>
-      <h1>Ski no Chile — 2 opções de hospedagem</h1>
-      <p class="lead">Achei dois apês pra galera na cordilheira (a 2,7 km um do outro). Dá uma olhada nos dois e me fala qual curtiu — o link de cada um tem fotos, mapa e todas as datas.</p>
-      <div class="meta">
-        <span class="pill">👥 <b>7 pessoas</b></span>
-        <span class="pill">🌙 <b>3 noites</b></span>
-        <span class="pill">📅 melhor data <b>10→13/ago</b></span>
-        <span class="pill">🏔️ El Colorado &amp; La Parva</span>
-      </div>
-    </header>
+<div class="wrap">
 
-    <main class="cards">
+  <header>
+    <div class="bar"></div>
+    <div class="eyebrow">🎿 Viagem de ski · Chile · agosto 2026</div>
+    <h1>El Colorado <span style="opacity:.6">x</span> La Parva</h1>
+    <p class="lead">Achei dois apês pra galera na cordilheira, a 2,7 km um do outro (dá pra esquiar nas duas estações). Compara aí embaixo e <b>vota qual vai ser</b> — cada foto abre em tela cheia.</p>
+    <div class="chips">
+      <span class="chip">👥 <b>7 pessoas</b></span>
+      <span class="chip">🌙 <b>3 noites</b></span>
+      <span class="chip">📅 melhor data <b>10→13/ago</b></span>
+      <span class="chip">🎿 pista no local (as 2)</span>
+    </div>
+  </header>
+
+  <!-- CARDS VERSUS -->
+  <section>
+    <h2>As duas opções</h2>
+    <div class="vs">
+      <div class="vslabel">VS</div>
 
       <!-- EL COLORADO -->
-      <article class="card">
-        <div class="top">
-          <span class="rank best">⭐ Melhor nota</span>
-          <div class="place">📍 El Colorado · pista na porta</div>
-          <h2>El Colorado Ski Departamentos</h2>
-          <div class="score">
-            <span class="n">9,7</span>
-            <span class="lbl">Excepcional · 13 avaliações</span>
+      <div class="opt">
+        <a class="cover" href="/ski-chile/el-colorado/">
+          <span class="tag g">⭐ Melhor nota</span>
+          <div class="nota"><b>9,7</b><span>Excepcional</span></div>
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/511848062.jpg?k=410332ffff55504944ddcfa663dff96d5735084b1286641acb58774649b1f3ed&o=" alt="El Colorado — sala com vista da montanha" loading="lazy">
+        </a>
+        <div class="body">
+          <h3>El Colorado Ski</h3>
+          <div class="loc">📍 El Colorado · pista na porta</div>
+          <div class="grid">
+            <div class="cell"><div class="n">Por pessoa</div><div class="v">R$ 1.157</div></div>
+            <div class="cell"><div class="n">Total 3 noites</div><div class="v">R$ 8.099 <small>c/ taxas</small></div></div>
+            <div class="cell"><div class="n">Tamanho</div><div class="v">70 m²</div></div>
+            <div class="cell"><div class="n">Banheiros</div><div class="v">1 <small>banheira</small></div></div>
           </div>
-          <div class="price">
-            <div><span class="big">R$ 1.157</span> <span class="per">/ pessoa</span></div>
-            <div class="sub">3 noites (10→13/ago) · total R$ 8.099 c/ taxas</div>
+          <div class="btns">
+            <a class="btn detail" href="/ski-chile/el-colorado/">Ver tudo →</a>
+            <a class="btn vote" id="voteEC" href="#" data-opt="el-colorado" target="_blank" rel="noopener">🗳️ Votar</a>
           </div>
         </div>
-        <ul class="facts">
-          <li><span class="k">📐</span><span>70 m² · dorme <b>7</b></span></li>
-          <li><span class="k">🛏️</span><span>2 quartos (1 casal + 5 solteiro) + sofá-cama</span></li>
-          <li><span class="k">🚿</span><span><b>1</b> banheiro (com banheira)</span></li>
-          <li><span class="k">✨</span><span>Piscina coberta · transfer aeroporto · garagem</span></li>
-        </ul>
-        <div class="note warn">⚠️ Disponibilidade bem restrita: no nosso período, só o <b>10/ago</b> encaixa.</div>
-        <a class="cta" href="/ski-chile/el-colorado/">Ver fotos, mapa e datas →</a>
-      </article>
+      </div>
 
       <!-- LA PARVA -->
-      <article class="card">
-        <div class="top">
-          <span class="rank space">📐 Mais espaço</span>
-          <div class="place">📍 La Parva · pistas ao lado</div>
-          <h2>Fantástico Refúgio en La Parva</h2>
-          <div class="score">
-            <span class="n">8,4</span>
-            <span class="lbl">Muito bom · 5 avaliações</span>
+      <div class="opt">
+        <a class="cover" href="/ski-chile/la-parva/">
+          <span class="tag o">📐 Mais espaço</span>
+          <div class="nota"><b>8,4</b><span>Muito bom</span></div>
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/688705205.jpg?k=2a82232221f120728d302cd5e181065c5afd5c76537b3232a0d9f57b71586c8b&o=" alt="La Parva — apartamento com vista" loading="lazy">
+        </a>
+        <div class="body">
+          <h3>Refúgio en La Parva</h3>
+          <div class="loc">📍 La Parva · pistas ao lado</div>
+          <div class="grid">
+            <div class="cell"><div class="n">Por pessoa</div><div class="v">R$ 1.514</div></div>
+            <div class="cell"><div class="n">Total 3 noites</div><div class="v">R$ 10.595 <small>c/ taxas</small></div></div>
+            <div class="cell"><div class="n">Tamanho</div><div class="v">100 m²</div></div>
+            <div class="cell"><div class="n">Banheiros</div><div class="v">2</div></div>
           </div>
-          <div class="price">
-            <div><span class="big">R$ 1.514</span> <span class="per">/ pessoa</span></div>
-            <div class="sub">3 noites (10→13/ago) · total R$ 10.595 c/ taxas</div>
+          <div class="btns">
+            <a class="btn detail" href="/ski-chile/la-parva/">Ver tudo →</a>
+            <a class="btn vote" id="voteLP" href="#" data-opt="la-parva" target="_blank" rel="noopener">🗳️ Votar</a>
           </div>
         </div>
-        <ul class="facts">
-          <li><span class="k">📐</span><span>100 m² · dorme <b>7</b></span></li>
-          <li><span class="k">🛏️</span><span>3 quartos (1 casal XG + 3 + 2 solteiro)</span></li>
-          <li><span class="k">🚿</span><span><b>2</b> banheiros</span></li>
-          <li><span class="k">✨</span><span>Varanda · terraço · cozinha · vista montanha</span></li>
-        </ul>
-        <div class="note good">✅ Bem mais flexível: tem quase o mês de agosto inteiro disponível.</div>
-        <a class="cta" href="/ski-chile/la-parva/">Ver fotos, mapa e datas →</a>
-      </article>
+      </div>
+    </div>
+  </section>
 
-    </main>
+  <!-- TABELA FRENTE A FRENTE -->
+  <section style="padding-top:4px">
+    <h2>Frente a frente</h2>
+    <p class="sub">Verde ✓ = ponto pra cada lado.</p>
+    <div style="overflow-x:auto">
+    <table class="cmp">
+      <tr><th>Critério</th><th>El Colorado</th><th>La Parva</th></tr>
+      <tr><td>Nota (avaliações)</td><td class="win"><b>9,7</b> · 13</td><td>8,4 · 5</td></tr>
+      <tr><td>Preço por pessoa</td><td class="win"><b>R$ 1.157</b></td><td>R$ 1.514</td></tr>
+      <tr><td>Total (3 noites, 7p)</td><td class="win"><b>R$ 8.099</b></td><td>R$ 10.595</td></tr>
+      <tr><td>Tamanho</td><td>70 m²</td><td class="win"><b>100 m²</b></td></tr>
+      <tr><td>Quartos</td><td>2 + sofá-cama</td><td class="win"><b>3</b></td></tr>
+      <tr><td>Camas</td><td>1 casal + 5 solt.</td><td>1 casal XG + 5 solt.</td></tr>
+      <tr><td>Banheiros</td><td>1</td><td class="win"><b>2</b></td></tr>
+      <tr><td>Destaque</td><td>Piscina coberta · transfer</td><td>Varanda · terraço</td></tr>
+      <tr><td>Disponibilidade (ago)</td><td>só 10/ago</td><td class="win"><b>quase o mês todo</b></td></tr>
+    </table>
+    </div>
+  </section>
 
-    <section class="verdict">
-      <h3>🧭 Resumo da real</h3>
-      <p><b>El Colorado</b> é mais barato (~R$ 360/pessoa a menos) e tem nota altíssima, mas só cabe se todo mundo topar o <b>10/ago</b> — e tem 1 banheiro só pra 7.</p>
-      <p><b>La Parva</b> custa um pouco mais, mas são <b>2 banheiros</b>, 100 m² e um monte de data livre — bom se a gente ainda tá fechando quem vai e quando.</p>
-      <p>As duas ficam coladas (2,7 km) e com pista no local. Bora decidir a data primeiro, aí a escolha fica fácil. 🤙</p>
-    </section>
+  <!-- VEREDITO -->
+  <section style="padding-top:4px">
+    <h2>Resumo da real</h2>
+    <div class="verdict">
+      <p><b>El Colorado</b> ganha no bolso (~R$ 360/pessoa a menos) e na nota (9,7), e a piscina coberta é um plus. Mas é <b>1 banheiro só pra 7</b> e, no nosso período, só o <b>10/ago</b> encaixa — se alguém não puder nessa data, já era.</p>
+      <p><b>La Parva</b> custa um pouco mais, porém são <b>2 banheiros</b>, 100 m² e um monte de data livre — respira melhor se a gente ainda tá fechando quem vai e quando.</p>
+      <p>As duas ficam coladas (2,7 km) e com pista no local. 👉 <b>Decidir a data primeiro</b> facilita: se rolar 10/ago pra todo mundo, El Colorado; se precisar de folga de data/banheiro, La Parva.</p>
+    </div>
+  </section>
 
-    <footer>
-      Preços do Booking em 06/jul/2026 · dinâmicos, confira na reserva · <a href="/">padilha.site</a>
-    </footer>
-  </div>
+  <!-- VOTAÇÃO -->
+  <section style="padding-top:4px">
+    <div class="poll">
+      <h2>🗳️ Qual vai ser?</h2>
+      <p>Toca na sua escolha — abre o WhatsApp com o voto pronto, é só mandar no grupo. 👇</p>
+      <div class="vbtns">
+        <a class="vbtn" id="pollEC" href="#" data-opt="el-colorado" target="_blank" rel="noopener">
+          <span class="em">🏔️</span>
+          <span class="tx"><span class="t">El Colorado</span><span class="s">9,7 · R$ 1.157/pessoa · pista na porta</span></span>
+          <span class="wa">🟢 votar</span>
+        </a>
+        <a class="vbtn" id="pollLP" href="#" data-opt="la-parva" target="_blank" rel="noopener">
+          <span class="em">🏡</span>
+          <span class="tx"><span class="t">La Parva</span><span class="s">100 m² · 2 banheiros · R$ 1.514/pessoa</span></span>
+          <span class="wa">🟢 votar</span>
+        </a>
+      </div>
+      <div class="voted" id="voted"></div>
+      <div class="note">A conta dos votos acontece no próprio grupo. Aqui só marca a sua escolha neste aparelho.</div>
+    </div>
+  </section>
+
+  <!-- CONTEXTO -->
+  <section style="padding-top:4px">
+    <h2>Contexto da viagem</h2>
+    <ul class="facts">
+      <li><b>Quando:</b> agosto/2026 — pico de neve no Chile. Melhor data comum: <b>10→13/ago</b> (seg→qui, mais barata).</li>
+      <li><b>Rock in Rio:</b> começa 4/set. Evitei datas coladas (fim de ago) pra voltar com folga.</li>
+      <li><b>Onde:</b> Valle Nevado / cordilheira, ~1h30 do aeroporto de Santiago (SCL). As 2 estações se conectam.</li>
+      <li><b>Preços:</b> Booking em 06/jul, dinâmicos — dá uma conferida antes de fechar.</li>
+    </ul>
+  </section>
+
+  <footer>
+    Comparação montada a partir do Booking.com · preços dinâmicos (confira na reserva) · lotação 7 pessoas · fotos © anfitrião/Booking · <a href="/">padilha.site</a>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var URLBASE='https://padilha.site/ski-chile/';
+  var texts={
+    'el-colorado':'🎿 Meu voto pra viagem de ski: *El Colorado* 🏔️\n(nota 9,7 · R$ 1.157/pessoa · pista na porta)\nAs opções: '+URLBASE,
+    'la-parva':'🎿 Meu voto pra viagem de ski: *La Parva* 🏡\n(100 m² · 2 banheiros · R$ 1.514/pessoa)\nAs opções: '+URLBASE
+  };
+  var names={'el-colorado':'El Colorado','la-parva':'La Parva'};
+  function wa(opt){return 'https://wa.me/?text='+encodeURIComponent(texts[opt]);}
+  var votedEl=document.getElementById('voted');
+  function markVoted(opt){
+    try{localStorage.setItem('skichile_vote',opt);}catch(e){}
+    if(votedEl)votedEl.textContent='✓ Você escolheu '+names[opt]+' — agora manda no grupo! 🎿';
+  }
+  // set hrefs + click handlers on all vote buttons
+  [].slice.call(document.querySelectorAll('[data-opt]')).forEach(function(el){
+    var opt=el.getAttribute('data-opt');
+    if(el.tagName==='A' && (el.classList.contains('vote')||el.classList.contains('vbtn'))){
+      el.href=wa(opt);
+      el.addEventListener('click',function(){markVoted(opt);});
+    }
+  });
+  // restore previous local choice
+  try{var prev=localStorage.getItem('skichile_vote');if(prev&&names[prev]&&votedEl)votedEl.textContent='✓ Você já escolheu '+names[prev]+' aqui. Trocar? É só votar de novo.';}catch(e){}
+})();
+</script>
 </body>
 </html>
