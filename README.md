@@ -6,6 +6,7 @@ Site pessoal pra publicar **páginas avulsas** (planejamentos, brincadeiras, coi
 
 - `/` — landing que lista as páginas
 - `/rockinrio` — planejamento de compra do Rock in Rio 2026
+- `/ski-chile` — comparação de 2 hospedagens pra viagem de ski (El Colorado x La Parva)
 
 ## Como funciona
 

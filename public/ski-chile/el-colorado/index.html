@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>El Colorado Ski Departamentos</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<style>
+:root{--navy:#0f2c40;--blue:#1f6f8b;--teal:#2a9d8f;--gold:#e8892b;--green:#1e7145;--ink:#233b48;--bg:#f5f8fb}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:900px;margin:0 auto;background:#fff;box-shadow:0 2px 20px rgba(0,0,0,.08)}
+header{background:linear-gradient(120deg,#0f2c40,#1f6f8b);color:#fff;padding:26px 28px 22px;position:relative}
+header .bar{position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--gold)}
+header h1{margin:0 0 4px;font-size:26px}header .sub{opacity:.9;font-size:14px}header .loc{opacity:.75;font-size:12.5px;margin-top:3px}
+.badge{position:absolute;right:26px;top:24px;background:var(--teal);color:#fff;border-radius:12px;padding:8px 12px;text-align:center;min-width:74px}
+.badge b{font-size:20px;display:block;line-height:1}.badge span{font-size:10px;opacity:.95}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:130px 130px;gap:4px}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;background:#dde}
+.gallery img:first-child{grid-row:1/3;height:264px}
+section{padding:20px 28px}h2{font-size:17px;color:var(--navy);margin:0 0 12px;border-left:4px solid var(--gold);padding-left:9px}
+.cols{display:flex;gap:22px;flex-wrap:wrap}.cols>div{flex:1;min-width:260px}
+table.rooms{width:100%;border-collapse:collapse;font-size:14px}
+table.rooms td{border:1px solid #dbe4ea;padding:8px 10px}table.rooms .amb{font-weight:700;color:var(--navy);width:38%}
+table.rooms .dorme{text-align:center;font-weight:700;color:var(--blue);width:64px}table.rooms tr:last-child{background:#eaf3ee}
+.price{background:#d9f0e2;border:1px solid var(--green);border-radius:14px;padding:16px 18px}
+.price .lbl{font-size:11px;color:#557}.price .big{font-size:34px;font-weight:800;color:var(--green);line-height:1}
+.price .per{font-size:14px;color:var(--navy);font-weight:600}.price .tot{font-size:12px;color:#567;margin-top:2px}
+.price ul{margin:10px 0 0;padding-left:18px;font-size:12.5px;color:#334}.price li{margin:2px 0}
+.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{background:#eef4f7;border:1px solid #d6e2e9;color:#33525f;border-radius:20px;padding:5px 11px;font-size:12.5px}
+#map{height:340px;border-radius:12px;border:1px solid #cdd8de;z-index:0}
+.leg{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;font-size:13px}.leg b{color:var(--navy)}
+table.cal{width:100%;border-collapse:collapse;font-size:12.6px;margin-top:6px}
+table.cal th{background:var(--navy);color:#fff;padding:7px 6px;font-size:12px}table.cal td{border:1px solid #d6dfe4;padding:5px 7px;text-align:center}
+table.cal td:first-child{text-align:left}.dw{color:#8aa;font-size:11px}.pp{font-weight:700;color:var(--navy)}
+tr.cheap td{background:#d9f0e2}tr.cheap .sit,tr.cheap .pp{color:var(--green);font-weight:800}
+tr.warn td{background:#fff3e0}tr.warn .sit{color:#b06a00;font-weight:700}.sit{font-size:11.5px}
+.alert{background:#fff3e0;border:1px solid #e0a45b;border-radius:10px;padding:10px 12px;font-size:13px;color:#8a5300;margin-bottom:12px}
+.cta{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;padding:11px 18px;border-radius:10px;font-weight:700;font-size:14px}
+footer{padding:16px 28px 26px;font-size:11.5px;color:#789;background:#f0f5f8}
+.k{display:flex;gap:14px;flex-wrap:wrap;margin:2px 0 4px}.k div{background:#f2f7fa;border:1px solid #dde8ee;border-radius:10px;padding:8px 12px;font-size:13px}.k b{color:var(--navy)}
+</style></head><body><div class="wrap">
+<header><div class="bar"></div><h1>El Colorado Ski Departamentos</h1><div class="sub">Apartamento inteiro (Superior) · 70 m² · até 7 hóspedes</div><div class="loc">📍 El Colorado, Chile — pista na porta</div>
+<div class="badge"><b>9,7</b><span>Excepcional</span></div></header>
+<div class="gallery" id="gal"></div>
+<section><div class="k"><div>👥 <b>Até 7 hóspedes</b></div><div>📐 <b>70 m²</b></div><div>⭐ <b>9,7</b> · 13 avaliações · Localização 10/10</div><div>🎿 <b>Pistas no local</b></div></div></section>
+<section><div class="cols">
+<div><h2>Quartos e camas — dorme 7</h2>
+<table class="rooms"><tr><td class="amb">Ambiente</td><td>Camas</td><td class="dorme">Dorme</td></tr><tr><td class='amb'>Quarto 1</td><td>1 cama de casal grande</td><td class='dorme'>2</td></tr><tr><td class='amb'>Quarto 2</td><td>5 camas de solteiro</td><td class='dorme'>5</td></tr><tr><td class='amb'>Sala</td><td>1 sofá-cama</td><td class='dorme'>extra</td></tr>
+<tr><td class="amb">Banheiros</td><td colspan="2">1 banheiro privativo (banheira)</td></tr></table></div>
+<div><h2>Melhor preço viável</h2><div class="price"><div class="lbl">3 NOITES · 7 PESSOAS · 10/ago→13/ago</div>
+<div><span class="big">R$ 1.157</span> <span class="per">/ pessoa</span></div>
+<div class="tot">total R$ 8.099 · com taxas</div>
+<div style="font-size:12px;color:#557;margin-top:8px"><b>Outras boas datas (por pessoa):</b></div><ul></ul></div></div>
+</div></section>
+<section><h2>Comodidades</h2><div class="chips"><span class='chip'>Piscina coberta</span><span class='chip'>Estacionamento grátis</span><span class='chip'>Transfer do aeroporto</span><span class='chip'>Cozinha</span><span class='chip'>Banheira</span><span class='chip'>TV de tela plana</span><span class='chip'>Vista da montanha</span></div></section>
+<section><h2>Onde fica &amp; distância às estações</h2><div class='alert'>⚠ Disponibilidade muito restrita: no período, só <b>10/ago</b> funciona (31/ago está fora por voltar colado no Rock in Rio).</div><div id="map"></div>
+<div class="leg"><b>Distâncias por estrada:</b> La Parva <b>2,7 km</b> · Farellones <b>5 km</b> · Valle Nevado <b>≈16 km</b> · Santiago <b>38 km</b> · Aeroporto SCL <b>69 km</b></div></section>
+<section><h2>Datas disponíveis (3 noites, 7 pessoas)</h2>
+<table class="cal"><tr><th>Check-in</th><th>Check-out</th><th>Total c/ taxas</th><th>Por pessoa</th><th>Situação</th></tr><tr class='cheap'><td>10/ago <span class='dw'>seg</span></td><td>13/ago</td><td>R$ 8.099</td><td class='pp'>R$ 1.157</td><td class='sit'>MELHOR ESCOLHA</td></tr><tr class='warn'><td>31/ago <span class='dw'>seg</span></td><td>03/set</td><td>R$ 7.395</td><td class='pp'>R$ 1.056</td><td class='sit'>⚠ colado no Rock in Rio</td></tr></table>
+<p style="font-size:11.5px;color:#789;margin-top:8px">Verde = melhor escolha (barata e com folga p/ o Rock in Rio, 4/9). Laranja = disponível, mas volta colado no dia 4. Taxas ~22% (incluem IVA 19%) já no total; pode haver isenção de IVA p/ estrangeiro pagando em USD.</p>
+<a class="cta" href="https://www.booking.com/hotel/cl/el-colorado-ski-departamento.pt-br.html" target="_blank">Ver fotos e reservar no Booking →</a></section>
+<footer><a href="/ski-chile/" style="display:inline-block;margin-bottom:10px;color:var(--blue);font-weight:700;text-decoration:none">← Comparar as 2 opções</a><br>Apresentação gerada a partir do Booking.com em 06/jul/2026 · preços dinâmicos, confira na reserva · lotação máxima 7 pessoas · fotos © anfitrião/Booking.</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+var imgs=["aHR0cHM6Ly9jZi5ic3RhdGljLmNvbS94ZGF0YS9pbWFnZXMvaG90ZWwvbWF4MTAyNHg3NjgvNTExODQ4MDYyLmpwZz9rPTQxMDMzMmZmZmY1NTUwNDk0NGRkY2ZhNjYzZGZmOTZkNTczNTA4NGIxMjg2NjQxYWNiNTg3NzQ2NDliMWYzZWQmbz0=", "aHR0cHM6Ly9jZi5ic3RhdGljLmNvbS94ZGF0YS9pbWFnZXMvaG90ZWwvbWF4MTAyNHg3NjgvMjA1NDQ5NDM5LmpwZz9rPTNjNDViYWZkYWQwNDg5MmY5ODgyOGI0OWIyOWVhNDE3MWEwNzQ3MjI5Njg4YWMwYjE3YzA0YmQxMzM2NWEyZGQmbz0=", "aHR0cHM6Ly9jZi5ic3RhdGljLmNvbS94ZGF0YS9pbWFnZXMvaG90ZWwvbWF4MTAyNHg3NjgvMTUwNDk2MzYyLmpwZz9rPTVlNjFhZGVlNTFlNTNlZmUyZWFhOTE4NWY4MTM4NDk0NzliOGVjYjlhZGVmYjE4NDNkNWE2Y2ExMjY1MTMxZjgmbz0=", "aHR0cHM6Ly9jZi5ic3RhdGljLmNvbS94ZGF0YS9pbWFnZXMvaG90ZWwvbWF4MTAyNHg3NjgvNzA5NjQ4MjQzLmpwZz9rPTQ5ZWZiY2FmOGFkMjU2NzBlOGE3NDljYmZiNzhhYzY2OTFjYjEyYjg2ODc1MzI5N2QyZGU2YWRhM2M4YTdjNzgmbz0=", "aHR0cHM6Ly9jZi5ic3RhdGljLmNvbS94ZGF0YS9pbWFnZXMvaG90ZWwvbWF4MTAyNHg3NjgvNzA5NjQ4MTIyLmpwZz9rPTg5ODBiNDFkMDQ4NWQ0MjE0YzVkMGYwYjY3NDBlZGNlOWI3YjUyNzU2NGRiMmFkYjBjYzRlNGViMTAwMDgyOGMmbz0="];
+var g=document.getElementById('gal');
+imgs.forEach(function(b){var im=document.createElement('img');im.src=atob(b);im.loading='lazy';g.appendChild(im);});
+var M=[{"nm": "Farellones", "la": -33.3536, "lo": -70.3236, "prop": false, "dist": "a 5 km da hospedagem"}, {"nm": "El Colorado", "la": -33.352, "lo": -70.296, "prop": true, "dist": "VOCÊ ESTÁ AQUI"}, {"nm": "La Parva", "la": -33.334, "lo": -70.283, "prop": false, "dist": "a 2,7 km da hospedagem"}, {"nm": "Valle Nevado", "la": -33.3547, "lo": -70.2483, "prop": false, "dist": "a ≈16 km da hospedagem"}];
+var map=L.map('map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:17,attribution:'© OpenStreetMap'}).addTo(map);
+var grp=[];
+M.forEach(function(m){
+  var color=m.prop?'#e8892b':'#1f6f8b';
+  var mk=L.circleMarker([m.la,m.lo],{radius:m.prop?11:8,color:'#fff',weight:2,fillColor:color,fillOpacity:1}).addTo(map);
+  mk.bindTooltip('<b>'+m.nm+'</b>'+(m.dist?'<br>'+m.dist:''),{permanent:true,direction:'top',offset:[0,-8],className:'lbl'});
+  grp.push([m.la,m.lo]);
+});
+map.fitBounds(grp,{padding:[45,45]});
+</script>
+</body></html>

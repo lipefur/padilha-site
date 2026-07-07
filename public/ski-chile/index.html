@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ski no Chile — 2 opções de hospedagem</title>
+<meta name="description" content="El Colorado x La Parva: duas opções de apê pra galera esquiar no Chile. Compara e escolhe.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Ski no Chile — 2 opções de hospedagem">
+<meta property="og:description" content="El Colorado x La Parva: compara as duas opções (7 pessoas · 3 noites · agosto).">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg:#0a0a0c; --panel:#141419; --panel2:#181820; --border:#2a2a33;
+    --text:#ececef; --muted:#9b9ba6; --a1:#ff2e63; --a2:#ff8a3d;
+    --green:#3ddc84; --amber:#ffb340; --blue:#4aa3ff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--text);min-height:100dvh;line-height:1.5;
+    padding:clamp(20px,5vw,56px) 18px;
+    background-image:radial-gradient(70% 55% at 50% -10%, rgba(74,163,255,.12), transparent 70%);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{width:100%;max-width:760px;margin:0 auto}
+  header{margin-bottom:26px}
+  .eyebrow{color:var(--blue);font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:7px}
+  h1{
+    font-size:clamp(26px,7vw,38px);font-weight:800;letter-spacing:-.02em;margin-top:8px;
+    background:linear-gradient(100deg,#fff,#b9c6d6);-webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .lead{color:var(--muted);margin-top:10px;font-size:16px;max-width:56ch}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .pill{background:var(--panel);border:1px solid var(--border);border-radius:999px;padding:6px 12px;font-size:13px;color:#c7c7d1}
+  .pill b{color:#fff;font-weight:650}
+
+  .cards{display:grid;grid-template-columns:1fr;gap:16px;margin-top:26px}
+  @media(min-width:680px){.cards{grid-template-columns:1fr 1fr}}
+
+  .card{
+    display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--border);
+    border-radius:18px;overflow:hidden;transition:transform .15s ease,border-color .15s ease;
+  }
+  .card:hover{transform:translateY(-2px);border-color:#3a3a46}
+  .card .top{padding:18px 18px 14px;position:relative}
+  .rank{
+    position:absolute;top:16px;right:16px;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;
+  }
+  .rank.best{background:rgba(61,220,132,.14);color:var(--green);border:1px solid rgba(61,220,132,.35)}
+  .rank.space{background:rgba(255,179,64,.14);color:var(--amber);border:1px solid rgba(255,179,64,.35)}
+  .place{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .card h2{font-size:19px;font-weight:750;letter-spacing:-.01em;margin-top:5px;padding-right:96px}
+  .score{display:flex;align-items:baseline;gap:8px;margin-top:12px}
+  .score .n{font-size:22px;font-weight:800;color:#fff}
+  .score .lbl{font-size:13px;color:var(--muted)}
+  .stars{color:var(--amber);font-size:13px}
+
+  .price{margin:14px 0 4px;padding:14px;background:var(--panel2);border:1px solid var(--border);border-radius:12px}
+  .price .big{font-size:28px;font-weight:800;color:#fff;line-height:1}
+  .price .per{font-size:14px;color:var(--muted);font-weight:600}
+  .price .sub{font-size:12.5px;color:var(--muted);margin-top:4px}
+
+  .facts{list-style:none;padding:16px 18px 4px;display:flex;flex-direction:column;gap:9px;font-size:14px}
+  .facts li{display:flex;gap:9px;color:#cdcdd6}
+  .facts .k{color:var(--muted);flex:none;width:20px;text-align:center}
+  .facts b{color:#fff;font-weight:600}
+
+  .note{margin:6px 18px 0;font-size:13px;padding:9px 11px;border-radius:10px;line-height:1.45}
+  .note.warn{background:rgba(255,179,64,.10);border:1px solid rgba(255,179,64,.28);color:#f0c886}
+  .note.good{background:rgba(61,220,132,.10);border:1px solid rgba(61,220,132,.28);color:#a5e8c2}
+
+  .cta{
+    margin:16px 18px 18px;display:flex;align-items:center;justify-content:center;gap:8px;
+    text-decoration:none;color:#fff;font-weight:700;font-size:15px;padding:13px 16px;border-radius:12px;
+    background:linear-gradient(100deg,var(--a1),var(--a2));transition:opacity .15s ease;
+  }
+  .cta:hover{opacity:.92}
+
+  .verdict{
+    margin-top:26px;background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:18px 20px;
+  }
+  .verdict h3{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:10px}
+  .verdict p{color:#c7c7d1;font-size:14.5px;margin-bottom:8px}
+  .verdict p:last-child{margin-bottom:0}
+  .verdict b{color:#fff}
+
+  footer{margin-top:34px;color:#5e5e68;font-size:13px;text-align:center}
+  footer a{color:#8a8a95}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">🎿 Viagem de ski</div>
+      <h1>Ski no Chile — 2 opções de hospedagem</h1>
+      <p class="lead">Achei dois apês pra galera na cordilheira (a 2,7 km um do outro). Dá uma olhada nos dois e me fala qual curtiu — o link de cada um tem fotos, mapa e todas as datas.</p>
+      <div class="meta">
+        <span class="pill">👥 <b>7 pessoas</b></span>
+        <span class="pill">🌙 <b>3 noites</b></span>
+        <span class="pill">📅 melhor data <b>10→13/ago</b></span>
+        <span class="pill">🏔️ El Colorado &amp; La Parva</span>
+      </div>
+    </header>
+
+    <main class="cards">
+
+      <!-- EL COLORADO -->
+      <article class="card">
+        <div class="top">
+          <span class="rank best">⭐ Melhor nota</span>
+          <div class="place">📍 El Colorado · pista na porta</div>
+          <h2>El Colorado Ski Departamentos</h2>
+          <div class="score">
+            <span class="n">9,7</span>
+            <span class="lbl">Excepcional · 13 avaliações</span>
+          </div>
+          <div class="price">
+            <div><span class="big">R$ 1.157</span> <span class="per">/ pessoa</span></div>
+            <div class="sub">3 noites (10→13/ago) · total R$ 8.099 c/ taxas</div>
+          </div>
+        </div>
+        <ul class="facts">
+          <li><span class="k">📐</span><span>70 m² · dorme <b>7</b></span></li>
+          <li><span class="k">🛏️</span><span>2 quartos (1 casal + 5 solteiro) + sofá-cama</span></li>
+          <li><span class="k">🚿</span><span><b>1</b> banheiro (com banheira)</span></li>
+          <li><span class="k">✨</span><span>Piscina coberta · transfer aeroporto · garagem</span></li>
+        </ul>
+        <div class="note warn">⚠️ Disponibilidade bem restrita: no nosso período, só o <b>10/ago</b> encaixa.</div>
+        <a class="cta" href="/ski-chile/el-colorado/">Ver fotos, mapa e datas →</a>
+      </article>
+
+      <!-- LA PARVA -->
+      <article class="card">
+        <div class="top">
+          <span class="rank space">📐 Mais espaço</span>
+          <div class="place">📍 La Parva · pistas ao lado</div>
+          <h2>Fantástico Refúgio en La Parva</h2>
+          <div class="score">
+            <span class="n">8,4</span>
+            <span class="lbl">Muito bom · 5 avaliações</span>
+          </div>
+          <div class="price">
+            <div><span class="big">R$ 1.514</span> <span class="per">/ pessoa</span></div>
+            <div class="sub">3 noites (10→13/ago) · total R$ 10.595 c/ taxas</div>
+          </div>
+        </div>
+        <ul class="facts">
+          <li><span class="k">📐</span><span>100 m² · dorme <b>7</b></span></li>
+          <li><span class="k">🛏️</span><span>3 quartos (1 casal XG + 3 + 2 solteiro)</span></li>
+          <li><span class="k">🚿</span><span><b>2</b> banheiros</span></li>
+          <li><span class="k">✨</span><span>Varanda · terraço · cozinha · vista montanha</span></li>
+        </ul>
+        <div class="note good">✅ Bem mais flexível: tem quase o mês de agosto inteiro disponível.</div>
+        <a class="cta" href="/ski-chile/la-parva/">Ver fotos, mapa e datas →</a>
+      </article>
+
+    </main>
+
+    <section class="verdict">
+      <h3>🧭 Resumo da real</h3>
+      <p><b>El Colorado</b> é mais barato (~R$ 360/pessoa a menos) e tem nota altíssima, mas só cabe se todo mundo topar o <b>10/ago</b> — e tem 1 banheiro só pra 7.</p>
+      <p><b>La Parva</b> custa um pouco mais, mas são <b>2 banheiros</b>, 100 m² e um monte de data livre — bom se a gente ainda tá fechando quem vai e quando.</p>
+      <p>As duas ficam coladas (2,7 km) e com pista no local. Bora decidir a data primeiro, aí a escolha fica fácil. 🤙</p>
+    </section>
+
+    <footer>
+      Preços do Booking em 06/jul/2026 · dinâmicos, confira na reserva · <a href="/">padilha.site</a>
+    </footer>
+  </div>
+</body>
+</html>
