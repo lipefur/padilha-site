@@ -1,220 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ski no Chile: fechamos o La Parva 🎿 (9→13/ago)</title>
-<meta name="description" content="Nosso grupo fechou o La Parva pra viagem de ski no Chile (9→13/ago, 4 noites). As duas opções seguem no ar caso outro grupo queira ir na mesma época: La Parva e El Colorado.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🎿 Cabana em Farellones — nossa viagem de ski (9→13/ago)</title>
+<meta name="description" content="Reservamos! Refúgio em Farellones (Chile) pra viagem de ski: casa inteira, 4 quartos, 11 camas, 2 banheiros, até 13 hóspedes. 9→13/ago, ~R$ 1.144/pessoa. Fotos, mapa e custos.">
 <meta name="theme-color" content="#0f2c40">
 <link rel="canonical" href="https://padilha.site/ski-chile/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="padilha.site">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Fechamos o La Parva 🎿 — ski no Chile (9→13/ago)">
-<meta property="og:description" content="Nosso grupo vai! 7 pessoas · 4 noites · agosto. Deixei as 2 opções no ar caso outro grupo anime de ir junto na mesma época.">
-<meta property="og:image" content="https://cf.bstatic.com/xdata/images/hotel/max1024x768/688705205.jpg?k=2a82232221f120728d302cd5e181065c5afd5c76537b3232a0d9f57b71586c8b&o=">
-<meta property="og:image:width" content="1024">
-<meta property="og:image:height" content="768">
+<meta property="og:title" content="🎿 Fechamos a cabana em Farellones! — ski no Chile (9→13/ago)">
+<meta property="og:description" content="Casa inteira pra até 13 · 4 quartos · 2 banheiros · ★4,85 · base das estações de ski. ~R$ 1.144/pessoa. Toque pra ver fotos, mapa e a conta da viagem.">
+<meta property="og:image" content="https://a0.muscache.com/im/pictures/2b1c6ffc-6c30-46a6-bb07-5f91289f0795.jpg">
 <meta property="og:url" content="https://padilha.site/ski-chile/">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <style>
-  :root{
-    --navy:#0f2c40; --blue:#1f6f8b; --teal:#2a9d8f; --gold:#e8892b;
-    --green:#1e7145; --ink:#233b48; --bg:#eef3f7; --win:#e4f6ec; --winln:#bfe6cd;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);padding:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:900px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.12)}
-
-  header{background:linear-gradient(120deg,#0f2c40,#1f6f8b);color:#fff;padding:26px 26px 22px;position:relative}
-  header .bar{position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--gold)}
-  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9fd2e0}
-  header h1{font-size:clamp(23px,5.6vw,30px);margin:8px 0 6px;letter-spacing:-.01em}
-  header .lead{opacity:.92;font-size:14.5px;max-width:58ch}
-  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
-  .chip{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:20px;padding:5px 11px;font-size:12.5px}
-  .chip b{font-weight:700}
-
-  /* faixa de decisão */
-  .decided{display:flex;align-items:center;gap:12px;background:#0e5a34;color:#fff;padding:13px 26px;font-size:14px}
-  .decided .ic{font-size:22px;flex:none}
-  .decided b{font-weight:800}
-  .decided .est{opacity:.8;font-size:12.5px}
-
-  section{padding:20px 22px}
-  h2{font-size:15px;color:var(--navy);margin:0 0 4px;border-left:4px solid var(--gold);padding-left:9px}
-  .sub{font-size:12.5px;color:#789;margin:8px 0 0;padding-left:13px}
-
-  /* cards dos hotéis */
-  .hotels{display:grid;grid-template-columns:1fr;gap:16px}
-  @media(min-width:640px){.hotels{grid-template-columns:1fr 1fr}}
-  .hotel{position:relative;display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid #dde8ee;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
-  .hotel:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(15,44,64,.17)}
-  .hotel.pick{border:2px solid var(--green);box-shadow:0 8px 24px rgba(30,113,69,.16)}
-  .hotel.alt{opacity:.985}
-  .ribbon{position:absolute;top:0;left:0;right:0;z-index:2;padding:8px 14px;font-size:12.5px;font-weight:800;color:#fff;display:flex;align-items:center;gap:7px;letter-spacing:.01em}
-  .ribbon.g{background:var(--green)}
-  .ribbon.n{background:rgba(15,44,64,.72);backdrop-filter:blur(3px);font-weight:700}
-  .hotel .ph{position:relative;height:196px;background:#33505f}
-  .hotel .ph img{width:100%;height:100%;object-fit:cover;display:block}
-  .hotel .nota{position:absolute;top:44px;right:12px;background:var(--teal);color:#fff;border-radius:11px;padding:6px 11px;font-size:11.5px;font-weight:700;box-shadow:0 2px 10px rgba(0,0,0,.3)}
-  .hotel .nota b{font-size:16px;margin-right:3px}
-  .hotel .info{padding:15px 17px 4px;flex:1}
-  .hotel h3{font-size:19px;color:var(--navy);letter-spacing:-.01em}
-  .hotel .loc{font-size:12.5px;color:#789;margin-top:3px}
-  .specs{display:flex;flex-wrap:wrap;gap:10px 18px;margin:14px 0 16px}
-  .specs .s{font-size:12px;color:#7c8b95;line-height:1.25}
-  .specs .s b{display:block;font-size:16px;font-weight:800;color:var(--navy)}
-  .specs .s.hl b{color:var(--green)}
-  .cta{display:flex;align-items:center;justify-content:center;gap:9px;color:#fff;font-weight:700;font-size:15px;padding:15px 14px;letter-spacing:.01em}
-  .cta.prim{background:var(--green)}
-  .cta.sec{background:var(--blue)}
-  .cta .arw{transition:transform .16s ease}
-  .hotel:hover .cta .arw{transform:translateX(4px)}
-  .hotel.pick:hover .cta.prim{background:#155c36}
-  .hotel.alt:hover .cta.sec{background:var(--navy)}
-
-  .cmp{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
-  .cmp th{background:var(--navy);color:#fff;padding:9px 8px;font-size:12.5px;text-align:center}
-  .cmp th:first-child{text-align:left;width:34%}
-  .cmp td{border-bottom:1px solid #e9eff3;padding:9px 10px;text-align:center}
-  .cmp td:first-child{text-align:left;color:#667;font-weight:600;font-size:12px}
-  .cmp tr:last-child td{border-bottom:none}
-  .cmp .pk{background:var(--win);font-weight:800;color:var(--green)}
-  .cmp b{color:var(--navy)}
-
-  .note{font-size:13px;color:#42535f;background:#f6f9fb;border:1px solid #e4edf2;border-radius:12px;padding:14px 16px;margin-top:16px}
-  .note b{color:var(--navy)}
-
-  footer{padding:15px 22px 22px;font-size:11.3px;color:#8598a3;background:#f0f5f8}
-  footer a{color:var(--blue)}
-
-  /* ---- otimização mobile ---- */
-  @media(max-width:560px){
-    body{padding:8px}
-    .wrap{border-radius:12px}
-    header{padding:19px 17px 17px}
-    header h1{font-size:24px;margin:7px 0 5px}
-    header .lead{font-size:13.5px;line-height:1.45}
-    .chips{gap:6px;margin-top:13px}
-    .chip{padding:5px 10px;font-size:12px}
-    .decided{padding:12px 17px;font-size:13px;gap:10px}
-    section{padding:15px 14px}
-    .hotels{gap:14px}
-    .hotel .ph{height:178px}
-    .hotel .info{padding:13px 15px 2px}
-    .hotel h3{font-size:18px}
-    .specs{gap:9px 16px;margin:12px 0 14px}
-    .cta{padding:15px 12px;font-size:15px}
-    h2{font-size:14.5px}
-    .cmp{font-size:12.5px;margin-top:10px}
-    .cmp th{padding:8px 6px;font-size:11.5px}
-    .cmp td{padding:8px 7px}
-    .note{font-size:12.5px;padding:12px 14px;line-height:1.5}
-    footer{padding:14px 14px 20px}
-  }
-</style>
-</head>
-<body>
+:root{--navy:#0f2c40;--blue:#1f6f8b;--teal:#2a9d8f;--gold:#e8892b;--green:#1e7145;--ink:#233b48;--bg:#eef3f7}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);padding:14px}
+.wrap{max-width:920px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.12)}
+.pickbar{background:#0e5a34;color:#fff;padding:12px 26px;font-size:14px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.pickbar b{font-weight:800}.pickbar span.est{opacity:.85;font-size:12.5px;white-space:nowrap}
+header{background:linear-gradient(120deg,#0f2c40,#1f6f8b);color:#fff;padding:24px 28px;position:relative}
+header .bar{position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--gold)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9fd2e0}
+header h1{margin:7px 0 4px;font-size:25px}header .sub{opacity:.92;font-size:14px}header .loc{opacity:.8;font-size:12.5px;margin-top:3px}
+.badge{position:absolute;right:24px;top:58px;background:var(--teal);color:#fff;border-radius:12px;padding:8px 12px;text-align:center;min-width:78px}
+.badge b{font-size:21px;display:block;line-height:1}.badge span{font-size:10px;opacity:.95}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:5px;background:#0f2c40}
+.gallery img{width:100%;height:118px;object-fit:cover;display:block;border-radius:5px;background:#33505f;cursor:pointer;transition:.15s}
+.gallery img:hover{opacity:.9}.gallery img:first-child{grid-column:span 2;grid-row:span 2;height:241px}
+@media(max-width:560px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery img,.gallery img:first-child{height:120px;grid-column:auto;grid-row:auto}}
+section{padding:18px 26px}h2{font-size:16px;color:var(--navy);margin:0 0 11px;border-left:4px solid var(--gold);padding-left:9px}
+.k{display:flex;gap:10px;flex-wrap:wrap}.k div{background:#f2f7fa;border:1px solid #dde8ee;border-radius:10px;padding:8px 12px;font-size:13px}.k b{color:var(--navy)}
+.cols{display:flex;gap:22px;flex-wrap:wrap}.cols>div{flex:1;min-width:270px}
+table.rooms{width:100%;border-collapse:collapse;font-size:14px}table.rooms td{border:1px solid #dbe4ea;padding:8px 10px}
+table.rooms .amb{font-weight:700;color:var(--navy);width:44%}table.rooms .dorme{text-align:center;font-weight:700;color:var(--blue);width:70px}table.rooms tr:last-child{background:#eaf3ee}
+.price{background:#d9f0e2;border:1px solid var(--green);border-radius:14px;padding:16px 18px}
+.price .lbl{font-size:11px;color:#557}.price .big{font-size:33px;font-weight:800;color:var(--green);line-height:1}
+.price .per{font-size:14px;color:var(--navy);font-weight:600}
+.brk{margin:10px 0 4px;font-size:13px}.brk div{display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px dashed #b9d8c6}
+.brk .tt{font-weight:800;color:var(--navy);border-bottom:none}
+.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{background:#eef4f7;border:1px solid #d6e2e9;color:#33525f;border-radius:20px;padding:5px 11px;font-size:12.5px}
+#map{height:340px;border-radius:12px;border:1px solid #cdd8de;z-index:0}
+.leg{margin-top:10px;font-size:13px}.leg b{color:var(--navy)}
+.cta{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;padding:11px 18px;border-radius:10px;font-weight:700;font-size:14px;margin-top:6px}
+.cta:hover{background:var(--navy)}
+.costcta{display:flex;align-items:center;gap:14px;text-decoration:none;background:linear-gradient(120deg,#0e5a34,#1e7145);color:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 4px 16px rgba(30,113,69,.22)}
+.costcta .t{display:block;font-size:16px;font-weight:800}.costcta .d{display:block;font-size:13px;opacity:.92;margin-top:2px}
+footer{padding:16px 26px 24px;font-size:11.3px;color:#789;background:#f0f5f8}footer a{color:var(--blue)}
+.back{display:inline-flex;align-items:center;gap:6px;max-width:920px;margin:0 auto 10px;color:var(--blue);font-weight:700;text-decoration:none;font-size:12.5px}.back:hover{text-decoration:underline}
+.lb{position:fixed;inset:0;background:rgba(8,18,26,.94);display:none;align-items:center;justify-content:center;z-index:2000;padding:16px;-webkit-tap-highlight-color:transparent}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:80vh;border-radius:10px;box-shadow:0 12px 50px rgba(0,0,0,.6);object-fit:contain;touch-action:pan-y}
+.lb .cls{position:absolute;top:14px;right:16px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;border:none;font-size:22px;cursor:pointer;display:grid;place-items:center;line-height:1}
+.lb .cls:hover{background:rgba(255,255,255,.28)}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;border:none;font-size:30px;cursor:pointer;display:grid;place-items:center;line-height:1;padding-bottom:3px}
+.lb .nav:hover{background:rgba(255,255,255,.28)}.lb .prev{left:12px}.lb .next{right:12px}
+.lb .cnt{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#cfe0ea;font-size:13px;letter-spacing:.04em;background:rgba(0,0,0,.35);padding:5px 13px;border-radius:20px}
+@media(max-width:560px){
+  body{padding:9px}.wrap{border-radius:12px}
+  header{padding:20px 18px}header h1{font-size:21px;padding-right:88px}header .sub{font-size:13px;padding-right:88px}.badge{top:52px;right:18px}
+  section{padding:16px 15px}h2{font-size:15px}.k{gap:8px}.k div{padding:7px 10px;font-size:12.5px}.cols{gap:14px}
+  .pickbar{padding:12px 17px;font-size:13px}.lb .nav{width:42px;height:42px;font-size:26px}
+  footer{padding:14px 15px 20px}
+}
+</style></head><body>
+<a class="back" href="/">← padilha.site</a>
 <div class="wrap">
-
-  <header>
-    <div class="bar"></div>
-    <div class="eyebrow">🎿 Viagem de ski · Chile · agosto 2026</div>
-    <h1>Fechamos o La Parva! 🎉</h1>
-    <p class="lead">Nosso grupo vai de <b>9 a 13/ago</b> (4 noites) no La Parva. Deixei as duas páginas no ar: se <b>outro grupo</b> animar de ir na mesma época, é só abrir as opções e conferir disponibilidade. 👇</p>
-    <div class="chips">
-      <span class="chip">👥 <b>7 pessoas</b></span>
-      <span class="chip">📅 <b>9→13/ago</b></span>
-      <span class="chip">🌙 <b>4 noites</b></span>
-      <span class="chip">🎿 pista no local</span>
-    </div>
-  </header>
-
-  <div class="decided">
-    <span class="ic">✅</span>
-    <div><b>Escolhido: La Parva</b> · 9→13/ago (4 noites) <span class="est">· ~R$ 2.000/pessoa (estimativa)</span></div>
-  </div>
-
-  <!-- HOTÉIS -->
-  <section>
-    <div class="hotels">
-
-      <!-- LA PARVA — escolhido -->
-      <a class="hotel pick" href="/ski-chile/la-parva/">
-        <div class="ribbon g">✅ Nosso grupo vai aqui</div>
-        <div class="ph">
-          <span class="nota"><b>8,4</b>Muito bom</span>
-          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/688705205.jpg?k=2a82232221f120728d302cd5e181065c5afd5c76537b3232a0d9f57b71586c8b&o=" alt="La Parva — apartamento com vista" loading="lazy">
-        </div>
-        <div class="info">
-          <h3>Refúgio en La Parva</h3>
-          <div class="loc">📍 La Parva · pistas ao lado</div>
-          <div class="specs">
-            <div class="s hl"><b>~R$ 2.000</b>por pessoa*</div>
-            <div class="s"><b>100 m²</b>tamanho</div>
-            <div class="s"><b>2</b>banheiros</div>
-          </div>
-        </div>
-        <div class="cta prim">Ver o hotel escolhido <span class="arw">→</span></div>
-      </a>
-
-      <!-- EL COLORADO — alternativa -->
-      <a class="hotel alt" href="/ski-chile/el-colorado/">
-        <div class="ribbon n">↔️ Alternativa · pra outro grupo</div>
-        <div class="ph">
-          <span class="nota"><b>9,7</b>Excepcional</span>
-          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/511848062.jpg?k=410332ffff55504944ddcfa663dff96d5735084b1286641acb58774649b1f3ed&o=" alt="El Colorado — sala com vista da montanha" loading="lazy">
-        </div>
-        <div class="info">
-          <h3>El Colorado Ski</h3>
-          <div class="loc">📍 El Colorado · pista na porta</div>
-          <div class="specs">
-            <div class="s"><b>9,7</b>nota (13 aval.)</div>
-            <div class="s"><b>70 m²</b>tamanho</div>
-            <div class="s"><b>1</b>banheiro</div>
-          </div>
-        </div>
-        <div class="cta sec">Ver a outra opção <span class="arw">→</span></div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- COMPARATIVO (referência pra outro grupo) -->
-  <section style="padding-top:2px">
-    <h2>Por que o La Parva?</h2>
-    <div style="overflow-x:auto">
-    <table class="cmp">
-      <tr><th>Critério</th><th>La Parva ✅</th><th>El Colorado</th></tr>
-      <tr><td>Banheiros</td><td class="pk"><b>2</b></td><td>1</td></tr>
-      <tr><td>Tamanho / quartos</td><td class="pk"><b>100 m² · 3 qtos</b></td><td>70 m² · 2 qtos</td></tr>
-      <tr><td>Disponibilidade (ago)</td><td class="pk"><b>datas livres</b></td><td>bem restrita</td></tr>
-      <tr><td>Nota</td><td>8,4 · 5 aval.</td><td><b>9,7</b> · 13 aval.</td></tr>
-      <tr><td>Por pessoa</td><td>~R$ 2.000 (4 noites)*</td><td>R$ 1.157 (3 noites)</td></tr>
-    </table>
-    </div>
-    <div class="note">
-      <b>A real:</b> pra 7 pessoas, os <b>2 banheiros</b>, o espaço extra (100 m²) e a folga de datas do La Parva pesaram mais que a nota um pouco maior do El Colorado. <b>Fechamos o La Parva, 9→13/ago (4 noites).</b><br>
-      <span style="color:#8598a3">Outro grupo pensando em ir junto? Abre o El Colorado e <b>confere disponibilidade e preço atualizados</b> — no período a agenda dele estava apertada. <span style="white-space:nowrap">*preço estimado, confira na reserva.</span></span>
-    </div>
-  </section>
-
-  <section style="padding-top:2px">
-    <a href="/ski-chile/custos/" style="display:flex;align-items:center;gap:14px;text-decoration:none;background:linear-gradient(120deg,#0e5a34,#1e7145);color:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 4px 16px rgba(30,113,69,.22)">
-      <span style="font-size:30px;flex:none">💰</span>
-      <span style="flex:1;min-width:0">
-        <span style="display:block;font-size:16px;font-weight:800">Quanto vai custar?</span>
-        <span style="display:block;font-size:13px;opacity:.92;margin-top:2px">Estimativa por pessoa — passagem, ski, equipamento, comida… <b>~R$ 6.600 a 8.000</b></span>
-      </span>
-      <span style="flex:none;font-size:22px">→</span>
-    </a>
-  </section>
-
-  <footer>
-    Montado a partir do Booking.com · preços dinâmicos (confira na reserva) · lotação 7 pessoas · fotos © anfitrião/Booking · <a href="/">padilha.site</a>
-  </footer>
+<div class="pickbar"><span style="font-size:20px">✅</span><span><b>Reserva feita</b> — bora pro ski! <span class="est">9→13/ago · 4 noites · aguardando OK do anfitrião</span></span></div>
+<header><div class="bar"></div>
+<div class="eyebrow">🎿 Viagem de ski · Chile · agosto 2026</div>
+<h1>Cabana em Farellones</h1>
+<div class="sub">Casa inteira · 4 quartos · 11 camas · até 13 hóspedes</div>
+<div class="loc">📍 Farellones, Chile — a vila-base das estações de ski</div>
+<div class="badge"><b>4,85</b><span>48 avaliações</span></div></header>
+<div class="gallery" id="gal">
+<img src="https://a0.muscache.com/im/pictures/2b1c6ffc-6c30-46a6-bb07-5f91289f0795.jpg" alt="Cabana em Farellones — fachada com neve">
+<img src="https://a0.muscache.com/im/pictures/75fb9f09-0bd4-4e5b-b8f7-e729870c1a43.jpg" alt="Cabana — ambiente">
+<img src="https://a0.muscache.com/im/pictures/bfacdb72-cf08-4268-b353-7dc782e6847f.jpg" alt="Cabana — ambiente">
+<img src="https://a0.muscache.com/im/pictures/51522316-6e24-446c-894d-b50f5d33116c.jpg" alt="Cabana — ambiente">
+<img src="https://a0.muscache.com/im/pictures/9fbc15d1-30e0-4b33-9747-61f49dcf61c8.jpg" alt="Cabana — ambiente">
+<img src="https://a0.muscache.com/im/pictures/hosting/Hosting-11948340/original/d341a31e-e885-4cc5-ad9f-5a19750fa5a2.jpeg" alt="Cabana — ambiente">
+<img src="https://a0.muscache.com/im/pictures/148f03e2-252f-4ab6-98ef-7a7f19d2760e.jpg" alt="Cabana — ambiente">
+<img src="https://a0.muscache.com/im/pictures/56414d02-9078-43f6-8f2d-4f1a55a92e50.jpg" alt="Cabana — ambiente">
 </div>
-</body>
-</html>
+<div style="padding:8px 26px 0;font-size:12px;color:#8399a6">🔍 Toque em qualquer foto para ampliar</div>
+<section><div class="k"><div>👥 <b>Até 13 hóspedes</b></div><div>🛏️ <b>4 quartos · 11 camas</b></div><div>🚿 <b>2 banheiros</b></div><div>⭐ <b>4,85</b> · 48 avaliações</div><div>🎿 <b>Base das estações</b></div></div></section>
+<section><div class="cols">
+<div><h2>A casa</h2>
+<table class="rooms"><tr><td class="amb">Ambiente</td><td class="dorme">Acomoda</td></tr>
+<tr><td class="amb">Casa inteira · 4 quartos</td><td class="dorme">13</td></tr>
+<tr><td class="amb">Camas</td><td class="dorme">11</td></tr>
+<tr><td class="amb">Banheiros</td><td class="dorme">2</td></tr></table>
+<p style="font-size:12px;color:#789;margin-top:8px">Distribuição exata das camas por quarto no anúncio do Airbnb.</p></div>
+<div><h2>Nossa reserva</h2><div class="price"><div class="lbl">✅ RESERVADO · 4 NOITES · 13 PESSOAS · 9/ago → 13/ago</div>
+<div style="margin-top:4px"><span class="big">~R$ 1.144</span> <span class="per">/ pessoa</span></div>
+<div class="brk">
+<div><span>Total da casa (4 noites)</span><span>R$ 14.870,09</span></div>
+<div><span>Dividido por</span><span>13 pessoas</span></div>
+<div class="tt"><span>Por pessoa</span><span>R$ 1.144</span></div>
+</div>
+<div style="font-size:11.5px;color:#557;margin-top:8px">Valor da reserva no Airbnb (já com taxas). Por pessoa cai se formos menos gente por quarto — combina no grupo.</div>
+<a class="cta" href="https://www.airbnb.com.br/rooms/11948340" target="_blank" rel="noopener">Ver anúncio no Airbnb →</a></div></div>
+</div></section>
+<section><h2>Comodidades</h2><div class="chips"><span class="chip">Cozinha equipada</span><span class="chip">Lareira</span><span class="chip">Aquecimento</span><span class="chip">Wi-Fi</span><span class="chip">Estacionamento grátis</span><span class="chip">Churrasqueira</span><span class="chip">Máquina de lavar</span><span class="chip">TV</span><span class="chip">Vista da montanha</span><span class="chip">Pertinho do Parque Farellones</span></div></section>
+<section><h2>Onde fica &amp; distância às estações</h2><div id="map"></div>
+<div class="leg"><b>Distâncias por estrada:</b> El Colorado <b>~3 km</b> · La Parva <b>~4 km</b> · Valle Nevado <b>~14 km</b> · Santiago <b>32 km</b> · Aeroporto SCL <b>62 km</b><br><span style="color:#789">Farellones é a vila-base: dá pra esquiar em El Colorado, La Parva e Valle Nevado saindo daqui.</span></div></section>
+<section>
+<a class="costcta" href="/ski-chile/custos/">
+<span style="font-size:30px;flex:none">💰</span>
+<span style="flex:1;min-width:0"><span class="t">Quanto vai custar?</span><span class="d">Estimativa por pessoa — passagem, ski, equipamento, comida… <b>~R$ 5.800 a 7.000</b></span></span>
+<span style="flex:none;font-size:22px">→</span>
+</a>
+</section>
+<footer>Reserva feita no Airbnb (Refúgio em Farellones) em jul/2026 · valores conforme a reserva · até 13 hóspedes · fotos © anfitrião/Airbnb · <a href="/ski-chile/custos/">ver custos</a> · <a href="/">padilha.site</a></footer>
+</div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+<button class="cls" id="lbCls" aria-label="Fechar">✕</button>
+<button class="nav prev" id="lbPrev" aria-label="Foto anterior">‹</button>
+<img id="lbImg" alt="Foto ampliada">
+<button class="nav next" id="lbNext" aria-label="Próxima foto">›</button>
+<div class="cnt" id="lbCnt"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+var M=[{"nm":"Farellones","la":-33.3536,"lo":-70.3236,"prop":true,"dist":"VOCÊ ESTÁ AQUI"},{"nm":"El Colorado","la":-33.352,"lo":-70.296,"prop":false,"dist":"a ~3 km"},{"nm":"La Parva","la":-33.334,"lo":-70.283,"prop":false,"dist":"a ~4 km"},{"nm":"Valle Nevado","la":-33.3547,"lo":-70.2483,"prop":false,"dist":"a ~14 km"}],map=L.map('map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:17,attribution:'© OpenStreetMap'}).addTo(map);
+var grp=[];
+M.forEach(function(m){var color=m.prop?'#e8892b':'#1f6f8b';var mk=L.circleMarker([m.la,m.lo],{radius:m.prop?11:8,color:'#fff',weight:2,fillColor:color,fillOpacity:1}).addTo(map);mk.bindTooltip('<b>'+m.nm+'</b>'+(m.dist?'<br>'+m.dist:''),{permanent:true,direction:'top',offset:[0,-8]});grp.push([m.la,m.lo]);});
+map.fitBounds(grp,{padding:[45,45]});
+(function(){
+  var gal=document.getElementById('gal'),lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCnt=document.getElementById('lbCnt');
+  var i=0,srcs=[];
+  function refresh(){srcs=[].slice.call(gal.querySelectorAll('img')).map(function(im){return im.src;});}
+  function show(n){if(!srcs.length)return;i=(n+srcs.length)%srcs.length;lbImg.src=srcs[i];lbCnt.textContent=(i+1)+' / '+srcs.length;lb.classList.add('on');document.body.style.overflow='hidden';}
+  function close(){lb.classList.remove('on');document.body.style.overflow='';}
+  gal.addEventListener('click',function(e){if(e.target.tagName==='IMG'){refresh();show(srcs.indexOf(e.target.src));}});
+  document.getElementById('lbCls').onclick=close;
+  document.getElementById('lbPrev').onclick=function(e){e.stopPropagation();show(i-1);};
+  document.getElementById('lbNext').onclick=function(e){e.stopPropagation();show(i+1);};
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft')show(i-1);else if(e.key==='ArrowRight')show(i+1);});
+  var x0=null;
+  lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>45)show(dx<0?i+1:i-1);x0=null;},{passive:true});
+})();
+</script>
+</body></html>
