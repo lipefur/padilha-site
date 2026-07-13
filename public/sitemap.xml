@@ -25,6 +25,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://padilha.site/ski-chile/lista/ela/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://padilha.site/ski-chile/lista/ele/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://padilha.site/rockinrio/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
