@@ -14,6 +14,8 @@
 <meta property="og:title" content="🎿 Fechamos a cabana em Farellones! — ski no Chile (9→13/ago)">
 <meta property="og:description" content="Casa inteira pra até 13 · 4 quartos · 2 banheiros · ★4,85 · base das estações de ski. ~R$ 1.144/pessoa. Toque pra ver fotos, mapa e a conta da viagem.">
 <meta property="og:image" content="https://a0.muscache.com/im/pictures/2b1c6ffc-6c30-46a6-bb07-5f91289f0795.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="768">
 <meta property="og:url" content="https://padilha.site/ski-chile/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
@@ -139,7 +141,7 @@ footer{padding:16px 26px 24px;font-size:11.3px;color:#789;background:#f0f5f8}foo
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-var M=[{"nm":"Farellones","la":-33.3536,"lo":-70.3236,"prop":true,"dist":"VOCÊ ESTÁ AQUI"},{"nm":"El Colorado","la":-33.352,"lo":-70.296,"prop":false,"dist":"a ~3 km"},{"nm":"La Parva","la":-33.334,"lo":-70.283,"prop":false,"dist":"a ~4 km"},{"nm":"Valle Nevado","la":-33.3547,"lo":-70.2483,"prop":false,"dist":"a ~14 km"}],map=L.map('map',{scrollWheelZoom:false});
+var M=[{"nm":"Nossa cabana","la":-33.34994,"lo":-70.30997,"prop":true,"dist":"Farellones — VOCÊ ESTÁ AQUI"},{"nm":"El Colorado","la":-33.352,"lo":-70.296,"prop":false,"dist":"a ~3 km"},{"nm":"La Parva","la":-33.334,"lo":-70.283,"prop":false,"dist":"a ~4 km"},{"nm":"Valle Nevado","la":-33.3547,"lo":-70.2483,"prop":false,"dist":"a ~14 km"}],map=L.map('map',{scrollWheelZoom:false});
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:17,attribution:'© OpenStreetMap'}).addTo(map);
 var grp=[];
 M.forEach(function(m){var color=m.prop?'#e8892b':'#1f6f8b';var mk=L.circleMarker([m.la,m.lo],{radius:m.prop?11:8,color:'#fff',weight:2,fillColor:color,fillOpacity:1}).addTo(map);mk.bindTooltip('<b>'+m.nm+'</b>'+(m.dist?'<br>'+m.dist:''),{permanent:true,direction:'top',offset:[0,-8]});grp.push([m.la,m.lo]);});
