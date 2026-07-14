@@ -34,6 +34,7 @@ header h1{margin:7px 0 4px;font-size:25px}header .sub{opacity:.92;font-size:14px
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:5px;background:#0f2c40}
 .gallery img{width:100%;height:118px;object-fit:cover;display:block;border-radius:5px;background:#33505f;cursor:pointer;transition:.15s}
 .gallery img:hover{opacity:.9}.gallery img:first-child{grid-column:span 2;grid-row:span 2;height:241px}
+.gallery img.more{display:none}.gallery.exp img.more{display:block}
 @media(max-width:560px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery img,.gallery img:first-child{height:120px;grid-column:auto;grid-row:auto}}
 section{padding:18px 26px}h2{font-size:16px;color:var(--navy);margin:0 0 11px;border-left:4px solid var(--gold);padding-left:9px}
 .k{display:flex;gap:10px;flex-wrap:wrap}.k div{background:#f2f7fa;border:1px solid #dde8ee;border-radius:10px;padding:8px 12px;font-size:13px}.k b{color:var(--navy)}
@@ -80,16 +81,24 @@ footer{padding:16px 26px 24px;font-size:11.3px;color:#789;background:#f0f5f8}foo
 <div class="loc">📍 Farellones, Chile — a vila-base das estações de ski</div>
 <div class="badge"><b>4,85</b><span>48 avaliações</span></div></header>
 <div class="gallery" id="gal">
-<img src="https://a0.muscache.com/im/pictures/2b1c6ffc-6c30-46a6-bb07-5f91289f0795.jpg" alt="Cabana em Farellones — fachada com neve">
-<img src="https://a0.muscache.com/im/pictures/75fb9f09-0bd4-4e5b-b8f7-e729870c1a43.jpg" alt="Cabana — ambiente">
-<img src="https://a0.muscache.com/im/pictures/bfacdb72-cf08-4268-b353-7dc782e6847f.jpg" alt="Cabana — ambiente">
-<img src="https://a0.muscache.com/im/pictures/51522316-6e24-446c-894d-b50f5d33116c.jpg" alt="Cabana — ambiente">
-<img src="https://a0.muscache.com/im/pictures/9fbc15d1-30e0-4b33-9747-61f49dcf61c8.jpg" alt="Cabana — ambiente">
-<img src="https://a0.muscache.com/im/pictures/hosting/Hosting-11948340/original/d341a31e-e885-4cc5-ad9f-5a19750fa5a2.jpeg" alt="Cabana — ambiente">
-<img src="https://a0.muscache.com/im/pictures/148f03e2-252f-4ab6-98ef-7a7f19d2760e.jpg" alt="Cabana — ambiente">
-<img src="https://a0.muscache.com/im/pictures/56414d02-9078-43f6-8f2d-4f1a55a92e50.jpg" alt="Cabana — ambiente">
+<img src="https://a0.muscache.com/im/pictures/2b1c6ffc-6c30-46a6-bb07-5f91289f0795.jpg" alt="Fachada da cabana com neve">
+<img src="https://a0.muscache.com/im/pictures/7253b58b-3f35-4c58-88f9-f35ab07b1634.jpg" alt="Sala de estar com vista pro vale">
+<img src="https://a0.muscache.com/im/pictures/c353cf45-37a7-4679-8a21-1fb0f634d380.jpg" alt="Cozinha equipada">
+<img src="https://a0.muscache.com/im/pictures/59743b4b-5d09-43eb-b40b-5800816c4f87.jpg" alt="Sala com fogão a lenha">
+<img src="https://a0.muscache.com/im/pictures/54dad2c4-fb20-4ba6-bd4a-4a5aa334af45.jpg" alt="Sala de estar">
+<img src="https://a0.muscache.com/im/pictures/hosting/Hosting-11948340/original/d341a31e-e885-4cc5-ad9f-5a19750fa5a2.jpeg" alt="Quarto">
+<img src="https://a0.muscache.com/im/pictures/56414d02-9078-43f6-8f2d-4f1a55a92e50.jpg" alt="Quarto no 2º andar">
+<img src="https://a0.muscache.com/im/pictures/51522316-6e24-446c-894d-b50f5d33116c.jpg" alt="Quarto com cama de casal">
+<img class="more" loading="lazy" src="https://a0.muscache.com/im/pictures/aa1787fa-5f35-4199-8f26-e69442722195.jpg" alt="Sala de estar">
+<img class="more" loading="lazy" src="https://a0.muscache.com/im/pictures/4ecb3a6f-0d80-4e13-9476-e11e9271ca42.jpg" alt="Área de estar">
+<img class="more" loading="lazy" src="https://a0.muscache.com/im/pictures/b16d1f3c-75b2-4838-8d73-ae1fc516d616.jpg" alt="Terraço interno">
+<img class="more" loading="lazy" src="https://a0.muscache.com/im/pictures/9aa07f58-a530-43f4-9b39-3c3cdc8c05bc.jpg" alt="Banheiro">
+<img class="more" loading="lazy" src="https://a0.muscache.com/im/pictures/7eb3637c-afc7-4a75-a6c1-2c03573ffe23.jpg" alt="Segundo banheiro">
+<img class="more" loading="lazy" src="https://a0.muscache.com/im/pictures/148f03e2-252f-4ab6-98ef-7a7f19d2760e.jpg" alt="Quartos no 2º andar">
+<img class="more" loading="lazy" src="https://a0.muscache.com/im/pictures/9fbc15d1-30e0-4b33-9747-61f49dcf61c8.jpg" alt="Ambiente da casa">
+<img class="more" loading="lazy" src="https://a0.muscache.com/im/pictures/b943681f-43d2-4871-bae8-8f06f81ac870.jpg" alt="Entrada da casa">
 </div>
-<div style="padding:8px 26px 0;font-size:12px;color:#8399a6">🔍 Toque em qualquer foto para ampliar</div>
+<div style="padding:9px 26px 0;font-size:12px;color:#8399a6;display:flex;justify-content:space-between;align-items:center;gap:10px"><span>🔍 Toque na foto pra ampliar</span><button id="moreBtn" style="background:#eaf1f5;border:1px solid #d3e0e8;color:var(--navy);font-weight:700;font-size:12.5px;padding:6px 13px;border-radius:20px;cursor:pointer;white-space:nowrap">Ver mais fotos (+8)</button></div>
 <section><div class="k"><div>👥 <b>Até 13 hóspedes</b></div><div>🛏️ <b>4 quartos · 11 camas</b></div><div>🚿 <b>2 banheiros</b></div><div>⭐ <b>4,85</b> · 48 avaliações</div><div>🎿 <b>Base das estações</b></div></div></section>
 <section><div class="cols">
 <div><h2>A casa</h2>
@@ -150,7 +159,7 @@ var M=[{"nm":"Nossa cabana","la":-33.34994,"lo":-70.30997,"prop":true,"dist":"Fa
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:17,attribution:'© OpenStreetMap'}).addTo(map);
 var grp=[];
 M.forEach(function(m){var color=m.prop?'#e8892b':'#1f6f8b';var mk=L.circleMarker([m.la,m.lo],{radius:m.prop?11:8,color:'#fff',weight:2,fillColor:color,fillOpacity:1}).addTo(map);mk.bindTooltip('<b>'+m.nm+'</b>'+(m.dist?'<br>'+m.dist:''),{permanent:true,direction:'top',offset:[0,-8]});grp.push([m.la,m.lo]);});
-map.fitBounds(grp,{padding:[45,45]});
+map.setView([-33.34994,-70.30997],13);
 (function(){
   var gal=document.getElementById('gal'),lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCnt=document.getElementById('lbCnt');
   var i=0,srcs=[];
@@ -166,6 +175,8 @@ map.fitBounds(grp,{padding:[45,45]});
   var x0=null;
   lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
   lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>45)show(dx<0?i+1:i-1);x0=null;},{passive:true});
+  var mb=document.getElementById('moreBtn');
+  if(mb)mb.addEventListener('click',function(){gal.classList.add('exp');mb.style.display='none';});
 })();
 </script>
 </body></html>
