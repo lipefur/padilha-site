@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>🗓️ Roteiro da viagem — ski no Chile (dia a dia)</title>
-<meta name="description" content="Roteiro dia a dia da viagem de ski no Chile (Farellones, 7→14/ago): chegada e compras em Santiago, cronograma das estações (El Colorado, Valle Nevado, La Parva), logística do 1º dia e a restrição da estrada.">
+<meta name="description" content="Roteiro dia a dia da viagem de ski no Chile (Farellones, 7→14/ago): voos, compras em Santiago, cronograma das estações (El Colorado, Valle Nevado, La Parva), logística do 1º dia e a restrição da estrada.">
 <meta name="theme-color" content="#0f2c40">
 <link rel="canonical" href="https://padilha.site/ski-chile/roteiro/">
 <meta name="robots" content="index,follow">
@@ -19,72 +19,115 @@
 <meta property="og:url" content="https://padilha.site/ski-chile/roteiro/">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-  :root{--navy:#0f2c40;--blue:#1f6f8b;--teal:#2a9d8f;--gold:#e8892b;--green:#1e7145;--ink:#233b48;--bg:#eef3f7}
+  :root{
+    --navy:#0f2c40; --blue:#1f6f8b; --teal:#2a9d8f; --gold:#e8892b; --green:#1e7145;
+    --ink:#233b48; --bg:#eef3f7; --city:#64748b;
+  }
   *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);padding:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
   .back{display:inline-flex;align-items:center;gap:6px;max-width:820px;margin:0 auto 10px;color:var(--blue);font-weight:700;text-decoration:none;font-size:12.5px}
   .back:hover{text-decoration:underline}
-  .wrap{max-width:820px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.12)}
+  .wrap{max-width:820px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.12)}
 
-  header{background:linear-gradient(120deg,#0f2c40,#1f6f8b);color:#fff;padding:26px 26px 22px;position:relative}
+  header{background:linear-gradient(135deg,#0b2436,#1f6f8b 130%);color:#fff;padding:26px 24px 22px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;right:-40px;top:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(232,137,43,.22),transparent 68%);pointer-events:none}
   header .bar{position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--gold)}
-  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9fd2e0}
-  header h1{font-size:clamp(23px,5.6vw,30px);margin:8px 0 6px}
-  header .lead{opacity:.92;font-size:14.5px;max-width:60ch}
-  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9fd2e0;position:relative}
+  header h1{font-size:clamp(24px,6vw,32px);margin:8px 0 6px;letter-spacing:-.015em;position:relative}
+  header .lead{opacity:.92;font-size:14.5px;max-width:56ch;position:relative}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px;position:relative}
   .chip{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:20px;padding:5px 11px;font-size:12.5px}
   .chip b{font-weight:700}
 
-  section{padding:18px 26px}
-  h2{font-size:15px;color:var(--navy);margin:0 0 12px;border-left:4px solid var(--gold);padding-left:9px}
+  /* ski distribution */
+  .dist{position:relative;margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .dist .dl{font-size:12px;font-weight:700;color:#cfe6ef;text-transform:uppercase;letter-spacing:.04em}
+  .sp{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:4px 10px 4px 8px;font-size:12.5px;color:#fff}
+  .sp .sd{width:9px;height:9px;border-radius:50%}
+  .sp b{font-weight:800}
 
-  .day{display:flex;gap:0;border:1px solid #e2ebf1;border-left:5px solid var(--c);border-radius:12px;overflow:hidden;margin-bottom:12px;background:#fff}
-  .day.hl{border-color:var(--gold);border-left-color:var(--gold);box-shadow:0 4px 16px rgba(232,137,43,.16)}
-  .day .dt{flex:none;width:66px;background:#f6f9fb;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px 6px;border-right:1px solid #eef3f6}
-  .day .dt .dw{font-size:11px;font-weight:700;color:#8598a3;text-transform:uppercase;letter-spacing:.03em}
-  .day .dt .dn{font-size:24px;font-weight:800;color:var(--navy);line-height:1}
-  .day .dt .dm{font-size:10.5px;color:#8598a3}
-  .day .bd{flex:1;min-width:0;padding:12px 14px}
-  .day .st{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  .day .stn{font-size:15px;font-weight:800;color:var(--navy)}
-  .day .tag{font-size:10.5px;font-weight:700;color:#fff;background:var(--c);padding:2px 8px;border-radius:20px}
-  .day .tag.first{background:var(--gold)}
-  .day .sub{font-size:12px;color:#8598a3;margin-top:1px}
-  .day ul{margin:9px 0 0;padding-left:17px}
-  .day li{font-size:13px;color:#3a4b57;margin:4px 0}
-  .day li b{color:var(--navy)}
-  .warn{background:#fff3e0;border:1px solid #e6c48a;border-radius:8px;padding:7px 10px;font-size:12px;color:#8a5300;margin-top:9px}
+  /* at a glance strip */
+  .gwrap{padding:15px 24px 4px}
+  .gtitle{font-size:11.5px;font-weight:700;color:#8598a3;text-transform:uppercase;letter-spacing:.05em;margin-bottom:9px}
+  .glance{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .glance::-webkit-scrollbar{height:5px}.glance::-webkit-scrollbar-thumb{background:#d3dde6;border-radius:3px}
+  .gl{flex:none;width:56px;text-decoration:none;background:#fff;border:1px solid #e2ebf1;border-radius:13px;padding:9px 0 0;text-align:center;overflow:hidden;transition:transform .12s ease,box-shadow .12s ease}
+  .gl:hover{transform:translateY(-2px);box-shadow:0 5px 12px rgba(0,0,0,.09)}
+  .gl .gd{font-size:9.5px;font-weight:800;color:#8598a3;text-transform:uppercase;letter-spacing:.03em;display:block}
+  .gl .gn{font-size:18px;font-weight:800;color:var(--navy);display:block;line-height:1.15}
+  .gl .gi{font-size:15px;display:block;margin-top:1px}
+  .gl .gbar{height:4px;background:var(--c);margin-top:6px}
+
+  section{padding:18px 24px}
+  h2{font-size:15px;color:var(--navy);margin:0 0 14px;border-left:4px solid var(--gold);padding-left:9px}
+
+  /* timeline */
+  .tl{position:relative}
+  .day{display:flex;gap:13px;margin-bottom:16px;scroll-margin-top:12px}
+  .rail{width:52px;flex:none;position:relative;display:flex;flex-direction:column;align-items:center}
+  .rail::after{content:"";position:absolute;left:50%;transform:translateX(-50%);top:58px;bottom:-16px;width:2px;background:#d7e3ea;z-index:0}
+  .day:last-child .rail::after{display:none}
+  .badge{width:52px;border-radius:12px;overflow:hidden;border:1px solid #e2ebf1;background:#fff;box-shadow:0 3px 8px rgba(0,0,0,.07);text-align:center;position:relative;z-index:1}
+  .badge .bt{background:var(--c);color:#fff;font-size:10px;font-weight:800;letter-spacing:.03em;padding:3px 0;text-transform:uppercase}
+  .badge .bn{font-size:22px;font-weight:800;color:var(--navy);line-height:1;padding:6px 0 5px}
+
+  .card{flex:1;min-width:0;border:1px solid #e6edf2;border-left:4px solid var(--c);border-radius:14px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.045);overflow:hidden}
+  .day.hl .card{border-color:#f0cf9c;border-left-color:var(--gold);box-shadow:0 6px 20px rgba(232,137,43,.17)}
+  .ch{display:flex;align-items:center;gap:11px;padding:13px 15px 11px}
+  .cico{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:20px;flex:none;background:var(--tint);border:1px solid var(--tintb)}
+  .ct{flex:1;min-width:0}
+  .cst{font-size:16.5px;font-weight:800;color:var(--navy);letter-spacing:-.01em;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .ctag{font-size:10px;font-weight:800;color:#fff;background:var(--c);padding:2px 8px;border-radius:20px;text-transform:uppercase;letter-spacing:.02em}
+  .ctag.first{background:var(--gold)}
+  .csub{font-size:12px;color:#8598a3;margin-top:2px}
+  .cb{padding:2px 15px 13px;border-top:1px solid #f0f4f7}
+  .irow{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid #f4f7f9}
+  .irow:last-child{border-bottom:none}
+  .ii{flex:none;width:22px;text-align:center;font-size:15px;line-height:1.35}
+  .it{flex:1;font-size:13px;color:#3a4b57}
+  .it b{color:var(--navy)}
+  .warn{background:#fff3e0;border:1px solid #e6c48a;border-radius:9px;padding:8px 11px;font-size:12px;color:#8a5300;margin-top:10px;display:flex;gap:8px}
   .warn b{color:#5f4611}
 
-  .info{background:#f6f9fb;border:1px solid #e4edf2;border-radius:12px;padding:14px 16px;margin-bottom:12px}
-  .info h3{font-size:14px;color:var(--navy);margin-bottom:7px;display:flex;align-items:center;gap:7px}
-  .info p{font-size:13px;color:#3a4b57;margin:5px 0}
-  .info b{color:var(--navy)}
-  .road{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-  .road div{flex:1;min-width:130px;background:#fff;border:1px solid #e2ebf1;border-radius:9px;padding:9px 11px;font-size:12.5px}
-  .road .h{font-weight:700;color:var(--navy);font-size:12px}
-  .road .v{color:#3a4b57;margin-top:2px}
+  /* road grid */
+  .road{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .rc{background:#f6f9fb;border:1px solid #e4edf2;border-radius:11px;padding:11px 12px}
+  .rc .rh{font-size:11px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.03em;display:flex;align-items:center;gap:6px}
+  .rc .rv{font-size:12.5px;color:#3a4b57;margin-top:3px}
+  .rc .rv b{color:var(--navy)}
+  .rc.hot{background:#fff3e0;border-color:#e6c48a}.rc.hot .rh{color:#8a5300}
 
-  .est{width:100%;border-collapse:collapse;font-size:13px;margin-top:4px}
-  .est td{border-bottom:1px solid #eef3f6;padding:9px 8px;vertical-align:top}
-  .est tr:last-child td{border-bottom:none}
-  .est .n{font-weight:700;color:var(--navy);white-space:nowrap}
-  .est .d{color:#5a6b76;font-size:12.5px}
-  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:middle}
+  /* stations */
+  .stn{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #eef3f6}
+  .stn:last-child{border-bottom:none}
+  .stn .si{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:19px;background:var(--tint);border:1px solid var(--tintb)}
+  .stn .sx{flex:1;min-width:0}
+  .stn .sn{font-size:14.5px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .stn .sbadge{font-size:10px;font-weight:700;color:#fff;background:var(--c);padding:2px 7px;border-radius:20px}
+  .stn .sdesc{font-size:12.5px;color:#5a6b76;margin-top:3px}
 
-  .cta2{display:flex;gap:12px;flex-wrap:wrap}
-  .cta2 a{flex:1;min-width:150px;display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff;border-radius:13px;padding:14px 16px;background:linear-gradient(120deg,#1f6f8b,#0f2c40)}
+  .info{background:#f6f9fb;border:1px solid #e4edf2;border-radius:12px;padding:13px 15px;margin-top:14px}
+  .info h3{font-size:14px;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:7px}
+  .info p{font-size:12.8px;color:#3a4b57}.info b{color:var(--navy)}
+
+  .cta2{display:flex;gap:11px;flex-wrap:wrap}
+  .cta2 a{flex:1;min-width:150px;display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff;border-radius:13px;padding:14px 16px;transition:transform .14s ease}
+  .cta2 a:hover{transform:translateY(-2px)}
   .cta2 a.g{background:linear-gradient(120deg,#0e5a34,#1e7145)}
-  .cta2 .em{font-size:24px}.cta2 .t{font-size:14px;font-weight:800}.cta2 .d{font-size:11.5px;opacity:.9}
+  .cta2 a.b{background:linear-gradient(120deg,#1f6f8b,#0f2c40)}
+  .cta2 .em{font-size:24px}.cta2 .t{font-size:14px;font-weight:800;display:block}.cta2 .d{font-size:11.5px;opacity:.9;display:block}
 
-  footer{padding:16px 26px 24px;font-size:11.3px;color:#789;background:#f0f5f8}footer a{color:var(--blue)}
+  footer{padding:16px 24px 24px;font-size:11.3px;color:#789;background:#f0f5f8}footer a{color:var(--blue)}
 
   @media(max-width:560px){
-    body{padding:9px}.wrap{border-radius:12px}
-    header{padding:20px 17px}header h1{font-size:23px}
-    section{padding:16px 15px}
-    .day .dt{width:56px}.day .dt .dn{font-size:21px}
-    footer{padding:14px 15px 20px}
+    body{padding:9px}.wrap{border-radius:13px}
+    header{padding:20px 17px}header h1{font-size:24px}
+    .gwrap{padding:14px 16px 2px}
+    section{padding:16px 16px}
+    .road{grid-template-columns:1fr}
+    .day{gap:10px}
+    footer{padding:14px 16px 20px}
   }
 </style>
 </head>
@@ -96,136 +139,188 @@
     <div class="bar"></div>
     <div class="eyebrow">🗓️ Roteiro · dia a dia</div>
     <h1>O plano da viagem</h1>
-    <p class="lead">Chegamos em Santiago na <b>sexta (7/ago)</b> — dois dias pra resolver tudo — e subimos pra montanha no domingo. São <b>4 dias de neve</b>: 2× Valle Nevado, 1× La Parva e o El Colorado nas pontas. 🎿</p>
+    <p class="lead">Chegamos em Santiago na <b>sexta (7/ago)</b>, dois dias pra resolver tudo, e subimos pra montanha no domingo. <b>4 dias de neve</b> pela frente. 🎿</p>
     <div class="chips">
       <span class="chip">🏡 Base: <b>Farellones</b></span>
       <span class="chip">📅 <b>7→14/ago</b></span>
-      <span class="chip">⛷️ <b>4 dias de ski</b></span>
+      <span class="chip">👥 <b>13 pessoas</b></span>
+    </div>
+    <div class="dist">
+      <span class="dl">4 dias de ski:</span>
+      <span class="sp"><span class="sd" style="background:#e8892b"></span>El Colorado <b>×1</b></span>
+      <span class="sp"><span class="sd" style="background:#1f6f8b"></span>Valle Nevado <b>×2</b></span>
+      <span class="sp"><span class="sd" style="background:#2a9d8f"></span>La Parva <b>×1</b></span>
     </div>
   </header>
 
+  <div class="gwrap">
+    <div class="gtitle">A viagem num relance — toque num dia</div>
+    <div class="glance">
+      <a class="gl" href="#d7" style="--c:var(--city)"><span class="gd">Sex</span><span class="gn">7</span><span class="gi">✈️</span><span class="gbar"></span></a>
+      <a class="gl" href="#d8" style="--c:var(--city)"><span class="gd">Sáb</span><span class="gn">8</span><span class="gi">🛒</span><span class="gbar"></span></a>
+      <a class="gl" href="#d9" style="--c:var(--gold)"><span class="gd">Dom</span><span class="gn">9</span><span class="gi">🎿</span><span class="gbar"></span></a>
+      <a class="gl" href="#d10" style="--c:var(--blue)"><span class="gd">Seg</span><span class="gn">10</span><span class="gi">🏔️</span><span class="gbar"></span></a>
+      <a class="gl" href="#d11" style="--c:var(--teal)"><span class="gd">Ter</span><span class="gn">11</span><span class="gi">🏔️</span><span class="gbar"></span></a>
+      <a class="gl" href="#d12" style="--c:var(--blue)"><span class="gd">Qua</span><span class="gn">12</span><span class="gi">🏔️</span><span class="gbar"></span></a>
+      <a class="gl" href="#d13" style="--c:var(--city)"><span class="gd">Qui</span><span class="gn">13</span><span class="gi">🧳</span><span class="gbar"></span></a>
+      <a class="gl" href="#d14" style="--c:var(--city)"><span class="gd">Sex</span><span class="gn">14</span><span class="gi">🛫</span><span class="gbar"></span></a>
+    </div>
+  </div>
+
   <section>
     <h2>Cronograma</h2>
+    <div class="tl">
 
-    <div class="day" style="--c:#8598a3">
-      <div class="dt"><span class="dw">sex</span><span class="dn">7</span><span class="dm">ago</span></div>
-      <div class="bd">
-        <div class="st"><span class="stn">Chegada em Santiago</span><span class="tag">✈️ voo</span></div>
-        <div class="sub">LATAM LA673 · CNF 07:50 → SCL 11:50 (direto)</div>
-        <ul>
-          <li>Chega <b>~meio-dia</b>. Pega o carro alugado — confirme <b>corrente + 4×4</b>.</li>
-          <li>Check-in no hotel e tarde livre pra descansar da viagem.</li>
-        </ul>
+      <!-- SEX 7 -->
+      <div class="day" id="d7" style="--c:var(--city);--tint:#e7edf2;--tintb:#d3dde6">
+        <div class="rail"><div class="badge"><div class="bt">Sex</div><div class="bn">7</div></div></div>
+        <div class="card">
+          <div class="ch">
+            <div class="cico">✈️</div>
+            <div class="ct"><div class="cst">Chegada em Santiago <span class="ctag">voo</span></div><div class="csub">LATAM LA673 · direto</div></div>
+          </div>
+          <div class="cb">
+            <div class="irow"><div class="ii">🛬</div><div class="it"><b>CNF 07:50 → SCL 11:50</b> — chega ~meio-dia.</div></div>
+            <div class="irow"><div class="ii">🚗</div><div class="it">Pega o carro alugado — confirme <b>corrente + 4×4</b>.</div></div>
+            <div class="irow"><div class="ii">🏨</div><div class="it">Check-in no hotel e <b>tarde livre</b> pra descansar.</div></div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="day" style="--c:#8598a3">
-      <div class="dt"><span class="dw">sáb</span><span class="dn">8</span><span class="dm">ago</span></div>
-      <div class="bd">
-        <div class="st"><span class="stn">Santiago</span><span class="tag">preparação</span></div>
-        <div class="sub">Resolver tudo antes de subir</div>
-        <ul>
-          <li><b>Compras da casa</b> — mercado grande (Jumbo/Líder): comida e bebida pra 13, uns 4 dias.</li>
-          <li>Passeio leve pela cidade e deixar tudo pronto pra <b>sair cedo</b> no domingo.</li>
-        </ul>
+      <!-- SAB 8 -->
+      <div class="day" id="d8" style="--c:var(--city);--tint:#e7edf2;--tintb:#d3dde6">
+        <div class="rail"><div class="badge"><div class="bt">Sáb</div><div class="bn">8</div></div></div>
+        <div class="card">
+          <div class="ch">
+            <div class="cico">🛒</div>
+            <div class="ct"><div class="cst">Santiago <span class="ctag">preparação</span></div><div class="csub">Resolver tudo antes de subir</div></div>
+          </div>
+          <div class="cb">
+            <div class="irow"><div class="ii">🧺</div><div class="it"><b>Compras da casa</b> — mercado grande (Jumbo/Líder): comida e bebida pra 13, uns 4 dias.</div></div>
+            <div class="irow"><div class="ii">🌆</div><div class="it">Passeio leve pela cidade e dormir cedo pra <b>sair no amanhecer</b> domingo.</div></div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="day hl" style="--c:#e8892b">
-      <div class="dt"><span class="dw">dom</span><span class="dn">9</span><span class="dm">ago</span></div>
-      <div class="bd">
-        <div class="st"><span class="stn">El Colorado</span><span class="tag first">1º dia</span></div>
-        <div class="sub">Meio período · adaptação · aluguel + aula</div>
-        <ul>
-          <li><b>Sair de Santiago ~6h30–7h</b>, já de roupa de ski.</li>
-          <li>Chegar <b>~9–10h</b>, deixar a <b>mala no carro</b> (check-in da cabana é 15h).</li>
-          <li><b>Alugar equipamento no El Colorado</b> (o mais barato). Com 13, chegar na abertura (~9h) pra garantir tamanho pra todos.</li>
-          <li>O <b>El Colorado</b> tem bastante pista fácil na base — ótimo pra pegar o jeito no 1º dia. Aula em grupo é opcional e sai mais em conta aqui.</li>
-        </ul>
-        <div class="warn">⚠️ <b>Domingo tem restrição na estrada:</b> subida só <b>08h–13h</b> e descida só <b>16h–20h</b> (fechada 13h–15h). Ou seja: sobe cedo e aproveita a tarde toda — desce depois das 16h.</div>
+      <!-- DOM 9 -->
+      <div class="day hl" id="d9" style="--c:var(--gold);--tint:#fbe6d4;--tintb:#f3d3a8">
+        <div class="rail"><div class="badge"><div class="bt">Dom</div><div class="bn">9</div></div></div>
+        <div class="card">
+          <div class="ch">
+            <div class="cico">🎿</div>
+            <div class="ct"><div class="cst">El Colorado <span class="ctag first">1º dia</span></div><div class="csub">Meio período · adaptação · a ~3 km da cabana</div></div>
+          </div>
+          <div class="cb">
+            <div class="irow"><div class="ii">🕕</div><div class="it"><b>Sair de Santiago ~6h30–7h</b>, já de roupa de ski.</div></div>
+            <div class="irow"><div class="ii">🚗</div><div class="it">Chegar <b>~9–10h</b>, mala no carro (check-in da cabana só 15h).</div></div>
+            <div class="irow"><div class="ii">⛷️</div><div class="it"><b>Alugar equipamento no El Colorado</b> (o mais barato). Com 13, chegar na <b>abertura (~9h)</b> pra garantir tamanho pra todos.</div></div>
+            <div class="irow"><div class="ii">🟢</div><div class="it">Pistas <b>fáceis</b> pra pegar o jeito. Aula em grupo é opcional e sai mais em conta aqui.</div></div>
+            <div class="warn"><span>⚠️</span><span><b>Domingo = estrada com horário:</b> sobe <b>08h–13h</b>, desce <b>16h–20h</b> (fechada 13h–15h). Sobe cedo e aproveita a tarde toda.</span></div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="day" style="--c:#1f6f8b">
-      <div class="dt"><span class="dw">seg</span><span class="dn">10</span><span class="dm">ago</span></div>
-      <div class="bd">
-        <div class="st"><span class="stn">Valle Nevado</span><span class="tag">dia cheio</span></div>
-        <div class="sub">A melhor e maior estação — pernas descansadas</div>
-        <ul>
-          <li>Estrada <b>livre</b> (dia de semana) — sobe/desce a hora que quiser.</li>
-          <li>Fica a ~14 km da cabana; sair cedo rende mais dia.</li>
-        </ul>
+      <!-- SEG 10 -->
+      <div class="day" id="d10" style="--c:var(--blue);--tint:#d9e9ef;--tintb:#bcd7e2">
+        <div class="rail"><div class="badge"><div class="bt">Seg</div><div class="bn">10</div></div></div>
+        <div class="card">
+          <div class="ch">
+            <div class="cico">🏔️</div>
+            <div class="ct"><div class="cst">Valle Nevado <span class="ctag">dia cheio</span></div><div class="csub">A melhor e maior estação · a ~14 km</div></div>
+          </div>
+          <div class="cb">
+            <div class="irow"><div class="ii">🛣️</div><div class="it">Estrada <b>livre</b> (dia de semana) — sobe e desce a hora que quiser.</div></div>
+            <div class="irow"><div class="ii">💪</div><div class="it">Pernas descansadas — dia de aproveitar a estação com tudo aberto. Sair cedo rende mais.</div></div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="day" style="--c:#2a9d8f">
-      <div class="dt"><span class="dw">ter</span><span class="dn">11</span><span class="dm">ago</span></div>
-      <div class="bd">
-        <div class="st"><span class="stn">La Parva</span><span class="tag">dia cheio</span></div>
-        <div class="sub">Mais perto (~4 km) e conecta com o Valle</div>
-        <ul>
-          <li>Com o <b>passe combo</b> dá pra cruzar pro Valle Nevado esquiando (pra quem já estiver soltando).</li>
-        </ul>
+      <!-- TER 11 -->
+      <div class="day" id="d11" style="--c:var(--teal);--tint:#d5efec;--tintb:#b6e0da">
+        <div class="rail"><div class="badge"><div class="bt">Ter</div><div class="bn">11</div></div></div>
+        <div class="card">
+          <div class="ch">
+            <div class="cico">🏔️</div>
+            <div class="ct"><div class="cst">La Parva <span class="ctag">dia cheio</span></div><div class="csub">Mais perto (~4 km) e conectada ao Valle</div></div>
+          </div>
+          <div class="cb">
+            <div class="irow"><div class="ii">🔗</div><div class="it">Com o <b>passe combo</b> dá pra cruzar pro Valle Nevado esquiando, pra quem já estiver soltando.</div></div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="day" style="--c:#1f6f8b">
-      <div class="dt"><span class="dw">qua</span><span class="dn">12</span><span class="dm">ago</span></div>
-      <div class="bd">
-        <div class="st"><span class="stn">Valle Nevado</span><span class="tag">dia cheio</span></div>
-        <div class="sub">2º dia — já conhecem o terreno</div>
-        <ul>
-          <li>Dia de explorar mais pistas ou tentar a <b>travessia dos 3 Valles</b> (só pra quem já estiver seguro).</li>
-        </ul>
+      <!-- QUA 12 -->
+      <div class="day" id="d12" style="--c:var(--blue);--tint:#d9e9ef;--tintb:#bcd7e2">
+        <div class="rail"><div class="badge"><div class="bt">Qua</div><div class="bn">12</div></div></div>
+        <div class="card">
+          <div class="ch">
+            <div class="cico">🏔️</div>
+            <div class="ct"><div class="cst">Valle Nevado <span class="ctag">dia cheio</span></div><div class="csub">2º dia — já conhecem o terreno</div></div>
+          </div>
+          <div class="cb">
+            <div class="irow"><div class="ii">🗺️</div><div class="it">Dia de explorar mais pistas ou tentar a <b>travessia dos 3 Valles</b> (só pra quem já estiver seguro).</div></div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="day" style="--c:#e8892b">
-      <div class="dt"><span class="dw">qui</span><span class="dn">13</span><span class="dm">ago</span></div>
-      <div class="bd">
-        <div class="st"><span class="stn">El Colorado</span><span class="tag">último ski + descida</span></div>
-        <div class="sub">Checkout da cabana</div>
-        <ul>
-          <li>Ski leve de <b>manhã</b> no El Colorado (pertinho), devolver equipamento.</li>
-          <li>Descer à tarde pra Santiago e <b>dormir na cidade</b> (de preferência perto do aeroporto, pro voo do dia seguinte).</li>
-        </ul>
+      <!-- QUI 13 -->
+      <div class="day" id="d13" style="--c:var(--city);--tint:#e7edf2;--tintb:#d3dde6">
+        <div class="rail"><div class="badge"><div class="bt">Qui</div><div class="bn">13</div></div></div>
+        <div class="card">
+          <div class="ch">
+            <div class="cico">🧳</div>
+            <div class="ct"><div class="cst">Checkout &amp; descida <span class="ctag">sem ski</span></div><div class="csub">Arrumar as coisas e voltar pra cidade</div></div>
+          </div>
+          <div class="cb">
+            <div class="irow"><div class="ii">🧹</div><div class="it">Manhã sem pressa, <b>checkout da cabana</b> e devolver o equipamento no El Colorado (é no caminho).</div></div>
+            <div class="irow"><div class="ii">🚗</div><div class="it">Descer pra Santiago e <b>dormir na cidade</b> (perto do aeroporto ajuda no voo de amanhã).</div></div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="day" style="--c:#8598a3">
-      <div class="dt"><span class="dw">sex</span><span class="dn">14</span><span class="dm">ago</span></div>
-      <div class="bd">
-        <div class="st"><span class="stn">Voo de volta</span><span class="tag">🏠</span></div>
-        <div class="sub">SKY H2 650 · SCL 13:20 → CNF 18:35 (direto, 4h15)</div>
-        <ul>
-          <li>Voo <b>13:20</b> — estar no aeroporto ~11h. Manhã tranquila antes de ir.</li>
-        </ul>
+      <!-- SEX 14 -->
+      <div class="day" id="d14" style="--c:var(--city);--tint:#e7edf2;--tintb:#d3dde6">
+        <div class="rail"><div class="badge"><div class="bt">Sex</div><div class="bn">14</div></div></div>
+        <div class="card">
+          <div class="ch">
+            <div class="cico">🛫</div>
+            <div class="ct"><div class="cst">Voo de volta <span class="ctag">🏠</span></div><div class="csub">SKY H2 650 · direto · 4h15</div></div>
+          </div>
+          <div class="cb">
+            <div class="irow"><div class="ii">🛫</div><div class="it"><b>SCL 13:20 → CNF 18:35</b> — estar no aeroporto ~11h. Manhã tranquila antes de ir.</div></div>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
   <section style="padding-top:2px">
     <h2>A estrada (Ruta G-21)</h2>
-    <div class="info">
-      <p><b>Só tem restrição de horário no fim de semana e feriado.</b> Como só o <b>domingo (dia 9)</b> cai nisso, é o único dia pra se preocupar — o resto (seg→qui) é livre.</p>
-      <div class="road">
-        <div><div class="h">Domingo (dia 9)</div><div class="v">Sobe <b>08h–13h</b> · desce <b>16h–20h</b> · fechada 13h–15h</div></div>
-        <div><div class="h">Seg a sex</div><div class="v">Sem restrição</div></div>
-        <div><div class="h">No inverno</div><div class="v"><b>Corrente obrigatória</b> · 4×4 recomendado</div></div>
-        <div><div class="h">Santiago → Farellones</div><div class="v">~2h · 46 km de curvas</div></div>
-      </div>
+    <p style="font-size:12.8px;color:#5a6b76;margin:-8px 0 12px 13px">Restrição de horário só no fim de semana — o único dia a se preocupar é o <b style="color:var(--navy)">domingo (dia 9)</b>.</p>
+    <div class="road">
+      <div class="rc hot"><div class="rh">☀️ Domingo (dia 9)</div><div class="rv">Sobe <b>08h–13h</b> · desce <b>16h–20h</b><br>Fechada 13h–15h (troca de sentido)</div></div>
+      <div class="rc"><div class="rh">📅 Seg a sex</div><div class="rv"><b>Sem restrição</b> — sobe e desce a hora que quiser.</div></div>
+      <div class="rc"><div class="rh">❄️ No inverno</div><div class="rv"><b>Corrente obrigatória</b> · 4×4 recomendado.</div></div>
+      <div class="rc"><div class="rh">🚗 Santiago → base</div><div class="rv">~2h · 46 km de curvas.</div></div>
     </div>
   </section>
 
   <section style="padding-top:2px">
     <h2>Qual estação serve pra quê</h2>
-    <table class="est">
-      <tr><td class="n"><span class="dot" style="background:#e8892b"></span>El Colorado</td><td class="d"><b>Melhor pra iniciante e pro 1º dia.</b> 75 km de pista (15% fácil, 40% intermediária), aluguel e aula mais baratos, coladinho na cabana. É a estação de ski da nossa base.</td></tr>
-      <tr><td class="n"><span class="dot" style="background:#1f6f8b"></span>Valle Nevado</td><td class="d">A <b>maior e melhor</b> estrutura, mais pistas e off-piste. Mais longe e mais cara — vale os dias cheios (seg/qua).</td></tr>
-      <tr><td class="n"><span class="dot" style="background:#2a9d8f"></span>La Parva</td><td class="d">Meio-termo: boa, mais perto que o Valle e <b>conectada</b> a ele pelo passe combo. Escola de ski tradicional.</td></tr>
-    </table>
-    <div class="warn" style="margin-top:11px">🛷 <b>Parque Farellones</b> (na vila, do lado da cabana) é só <b>tubing, trenó e ladeirinha de iniciante</b> — família e quem não vai esquiar. Não é pista de ski, não conta como dia na neve.</div>
-    <div class="info" style="margin-top:12px">
+    <div class="stn" style="--c:var(--gold);--tint:#fbe6d4;--tintb:#f3d3a8">
+      <div class="si">🎿</div>
+      <div class="sx"><div class="sn">El Colorado <span class="sbadge">1º dia</span></div><div class="sdesc"><b>Melhor pra iniciante.</b> 75 km de pista (15% fácil, 40% intermediária), aluguel e aula mais baratos, coladinho na cabana. É a estação de ski da nossa base.</div></div>
+    </div>
+    <div class="stn" style="--c:var(--blue);--tint:#d9e9ef;--tintb:#bcd7e2">
+      <div class="si">🏔️</div>
+      <div class="sx"><div class="sn">Valle Nevado <span class="sbadge">2 dias</span></div><div class="sdesc">A <b>maior e melhor</b> estrutura, mais pistas e off-piste. Mais longe e mais cara — vale os dias cheios (seg/qua).</div></div>
+    </div>
+    <div class="stn" style="--c:var(--teal);--tint:#d5efec;--tintb:#b6e0da">
+      <div class="si">🏔️</div>
+      <div class="sx"><div class="sn">La Parva <span class="sbadge">1 dia</span></div><div class="sdesc">Meio-termo: boa, mais perto que o Valle e <b>conectada</b> a ele pelo passe combo. Escola de ski tradicional.</div></div>
+    </div>
+    <div class="info">
       <h3>🎿 Sobre aulas</h3>
       <p>Se rolar aula de iniciante, o <b>El Colorado</b> é mais em conta e tem o terreno certo. Referência do Valle Nevado (mais caro): grupo ~US$ 50 meio dia / US$ 100 dia inteiro, turmas de até 8, manhã 10h–13h.</p>
     </div>
@@ -234,7 +329,7 @@
   <section style="padding-top:4px">
     <div class="cta2">
       <a class="g" href="/ski-chile/custos/"><span class="em">💰</span><span><span class="t">Custos</span><span class="d">quanto vai sair</span></span></a>
-      <a href="/ski-chile/lista/"><span class="em">🎒</span><span><span class="t">O que levar</span><span class="d">checklist de mala</span></span></a>
+      <a class="b" href="/ski-chile/lista/"><span class="em">🎒</span><span><span class="t">O que levar</span><span class="d">checklist de mala</span></span></a>
     </div>
   </section>
 
